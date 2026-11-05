@@ -1,8 +1,8 @@
 {
     "id": "/",
-    "name": "La Colongette Antsirabe",
-    "short_name": "La Colongette",
-    "description": "Hôtel, restaurant, piscine et bien-être à Antsirabe, Madagascar.",
+    "name": "Le Vezo Beach Morondava",
+    "short_name": "Le Vezo Beach",
+    "description": "Hôtel, restaurant, piscine et bien-être à Morondava, Madagascar.",
     "lang": "fr",
     "start_url": "/",
     "scope": "/",
@@ -12,8 +12,8 @@
         "minimal-ui"
     ],
     "orientation": "any",
-    "background_color": "#2C2C2C",
-    "theme_color": "#C9A961",
+    "background_color": "#292059",
+    "theme_color": "#292059",
     "categories": [
         "travel",
         "lifestyle"

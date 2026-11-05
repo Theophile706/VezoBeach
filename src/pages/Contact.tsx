@@ -43,14 +43,14 @@ export default function Contact() {
           <h3 className="font-serif text-xl mb-6">{t('contact.infoTitle')}</h3>
           <div className="space-y-6 text-sm">
             <div className="flex items-start gap-3">
-              <MapPin size={18} className="text-gold-500 mt-0.5 shrink-0" />
+              <MapPin size={18} className="text-brand-gold mt-0.5 shrink-0" />
               <div>
                 <div className="font-medium text-charcoal">{t('contact.addressLabel')}</div>
                 <div className="text-gray-600">{t('contact.address')}</div>
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Phone size={18} className="text-gold-500 mt-0.5 shrink-0" />
+              <Phone size={18} className="text-brand-gold mt-0.5 shrink-0" />
               <div>
                 <div className="font-medium text-charcoal">{t('contact.phoneInfoLabel')}</div>
                 <a href="tel:+261344904040" className="text-gray-600 hover:text-gold-600 block">+261 34 49 040 40</a>
@@ -58,7 +58,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Mail size={18} className="text-gold-500 mt-0.5 shrink-0" />
+              <Mail size={18} className="text-brand-gold mt-0.5 shrink-0" />
               <div>
                 <div className="font-medium text-charcoal">{t('contact.emailInfoLabel')}</div>
                 <a href="mailto:royalpalace.resa@moov.mg" className="text-gray-600 hover:text-gold-600 block">
@@ -75,7 +75,7 @@ export default function Contact() {
                 href="https://www.facebook.com/hotelroyalpalaceantsirabe"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-cream flex items-center justify-center text-gold-600 hover:bg-gold-500 hover:text-white transition-colors"
+                className="w-10 h-10 rounded-full bg-cream flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-white transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={18} />
@@ -84,7 +84,7 @@ export default function Contact() {
                 href="https://www.instagram.com/hotelroyalpalace_antsirabe/"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-cream flex items-center justify-center text-gold-600 hover:bg-gold-500 hover:text-white transition-colors"
+                className="w-10 h-10 rounded-full bg-cream flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-white transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={18} />

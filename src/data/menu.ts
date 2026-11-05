@@ -107,8 +107,8 @@ export const menuSections: MenuSection[] = [
     items: [
       {
         id: 'b1',
-        name: 'Cocktail signature "La Colongette"',
-        nameEn: '"La Colongette" signature cocktail',
+        name: 'Cocktail signature "Le Vezo Beach"',
+        nameEn: '"Le Vezo Beach" signature cocktail',
         description: 'Rhum arrangé maison, fruits de la passion',
         descriptionEn: 'House-infused rum, passion fruit',
         price: 15000,

@@ -49,16 +49,16 @@ export default function RoomCard({ room, featured = false, availability }: RoomC
         {/* Caractéristiques */}
         <div className="flex flex-wrap gap-4 text-xs text-gray-500 mb-5 border-t border-gray-100 pt-4">
           <span className="flex items-center gap-1.5">
-            <Maximize size={14} className="text-gold-500" /> {room.size} m²
+            <Maximize size={14} className="text-brand-gold" /> {room.size} m²
           </span>
           <span className="flex items-center gap-1.5">
-            <Users size={14} className="text-gold-500" /> {room.maxGuests} {t('rooms.guests')}
+            <Users size={14} className="text-brand-gold" /> {room.maxGuests} {t('rooms.guests')}
           </span>
           <span className="flex items-center gap-1.5">
-            <BedDouble size={14} className="text-gold-500" /> {t(`${base}.bedType`)}
+            <BedDouble size={14} className="text-brand-gold" /> {t(`${base}.bedType`)}
           </span>
           <span className="flex items-center gap-1.5">
-            <Eye size={14} className="text-gold-500" /> {t(`${base}.view`)}
+            <Eye size={14} className="text-brand-gold" /> {t(`${base}.view`)}
           </span>
         </div>
 

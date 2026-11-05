@@ -66,7 +66,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="p-6">
-                    <s.icon className="text-gold-500 mb-3" size={24} />
+                    <s.icon className="text-brand-gold mb-3" size={24} />
                     <h3 className="font-serif text-lg text-charcoal mb-2">{t(`home.${s.key}Title`)}</h3>
                     <p className="text-sm text-gray-600 leading-relaxed">{t(`home.${s.key}Text`)}</p>
                   </div>
@@ -84,7 +84,7 @@ export default function Home() {
           {highlights.map((h) => (
             <div key={h.key} className="text-center">
               <div className="w-14 h-14 rounded-full bg-gold-50 flex items-center justify-center mx-auto mb-5">
-                <h.icon className="text-gold-500" size={26} />
+                <h.icon className="text-brand-gold" size={26} />
               </div>
               <h3 className="font-serif text-lg mb-2">{t(`home.${h.key}`)}</h3>
               <p className="text-sm text-gray-600">{t(`home.${h.key}Text`)}</p>

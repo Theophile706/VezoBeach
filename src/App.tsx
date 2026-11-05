@@ -92,6 +92,7 @@ export default function App() {
             <Route path="/restaurant" element={<Restaurant />} />
             <Route path="/piscine-bien-etre" element={<Spa />} />
             <Route path="/reunions-evenements" element={<Events />} />
+            <Route path="/decouvrir-morondava" element={<Discover />} />
             <Route path="/decouvrir-antsirabe" element={<Discover />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

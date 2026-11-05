@@ -99,7 +99,7 @@ export default function Events() {
     try {
       const result = await api.sendEventInquiry(form)
       if (result.error) {
-        console.error('[La Colongette] Event inquiry failed:', result.error)
+        console.error('[Le Vezo Beach] Event inquiry failed:', result.error)
         setSubmitError(
           typeof result.error === 'string' && result.error !== 'Network error'
             ? `L'envoi a échoué : ${result.error}`
@@ -110,7 +110,7 @@ export default function Events() {
         setStatus('success')
       }
     } catch (err) {
-      console.error('[La Colongette] Event inquiry exception:', err)
+      console.error('[Le Vezo Beach] Event inquiry exception:', err)
       setSubmitError('Impossible de contacter le serveur. Veuillez réessayer plus tard.')
       setStatus('idle')
     }
@@ -161,7 +161,7 @@ export default function Events() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-14 max-w-4xl mx-auto">
           {equipmentKeys.map((key) => (
             <div key={key} className="flex items-center gap-3 bg-white border border-gray-100 rounded-md p-4 shadow-sm">
-              <CheckCircle2 size={18} className="text-gold-500 shrink-0" />
+              <CheckCircle2 size={18} className="text-brand-gold shrink-0" />
               <span className="text-sm text-charcoal">{t(`events.${key}`)}</span>
             </div>
           ))}

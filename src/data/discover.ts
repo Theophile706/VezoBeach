@@ -1,5 +1,5 @@
 /**
- * DISCOVER ANTSIRABE DATA
+ * DISCOVER MORONDAVA DATA
  * -----------------------
  * Activities and nearby attractions. Icon names reference lucide-react icons.
  */

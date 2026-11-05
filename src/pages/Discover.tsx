@@ -37,7 +37,7 @@ export default function Discover() {
                       </div>
                     )}
                     <div className="p-6 flex-1">
-                      <Icon className="text-gold-500 mb-3" size={22} aria-hidden="true" />
+                      <Icon className="text-brand-gold mb-3" size={22} aria-hidden="true" />
                       <h3 className="font-serif text-lg mb-2">{title(activity)}</h3>
                       <p className="text-sm text-gray-600 leading-relaxed">{text(activity)}</p>
                     </div>
@@ -52,7 +52,7 @@ export default function Discover() {
       <AnimatedSection className="container-luxe py-20 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div>
           <h3 className="font-serif text-2xl mb-6 flex items-center gap-3">
-            <MapPin className="text-gold-500" size={24} aria-hidden="true" /> {t('discover.attractionsTitle')}
+            <MapPin className="text-brand-gold" size={24} aria-hidden="true" /> {t('discover.attractionsTitle')}
           </h3>
           <ul className="space-y-3">
             {attractions.map((attraction) => (
@@ -65,7 +65,7 @@ export default function Discover() {
         </div>
         <div>
           <h3 className="font-serif text-2xl mb-6 flex items-center gap-3">
-            <Bus className="text-gold-500" size={24} aria-hidden="true" /> {t('discover.transportTitle')}
+            <Bus className="text-brand-gold" size={24} aria-hidden="true" /> {t('discover.transportTitle')}
           </h3>
           <p className="text-gray-600 leading-relaxed">{t('discover.transportText')}</p>
         </div>

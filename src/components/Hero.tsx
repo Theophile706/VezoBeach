@@ -7,7 +7,7 @@ import BookingBar from './BookingBar'
  * ----
  * Full-screen hero replicating the reference photo:
  * - Full-bleed building image (dusk lighting)
- * - Centered "LA COLONGETTE" / "A N T S I R A B E" title with gold divider
+ * - Centered "LE VEZO BEACH" / "M O R O N D A V A" title with gold divider
  * - Tagline in italic serif
  * - Floating white booking bar overlapping the bottom edge
  *
@@ -35,7 +35,7 @@ export default function Hero() {
         */}
         <img
           src="/images/hero/hero-building.jpg"
-          alt="La Colongette Antsirabe — façade de l'hôtel"
+          alt="Le Vezo Beach Morondava — façade de l'hôtel"
           width={1382}
           height={745}
           loading="eager"

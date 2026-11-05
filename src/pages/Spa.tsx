@@ -84,7 +84,7 @@ export default function Spa() {
           <h2 className="section-title mb-5">{t('spa.poolTitle')}</h2>
           <p className="text-gray-600 leading-relaxed">{t('spa.poolText')}</p>
           <div className="mt-6 flex items-center gap-3 text-sm text-charcoal">
-            <Clock size={16} className="text-gold-500" /> {t('spa.poolHours')}
+            <Clock size={16} className="text-brand-gold" /> {t('spa.poolHours')}
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4">
@@ -105,7 +105,7 @@ export default function Spa() {
             <h2 className="section-title mb-5">{t('spa.spaTitle')}</h2>
             <p className="text-gray-600 leading-relaxed">{t('spa.spaText')}</p>
             <div className="mt-6 flex items-center gap-3 text-sm text-charcoal">
-              <Clock size={16} className="text-gold-500" /> {t('spa.spaHours')}
+              <Clock size={16} className="text-brand-gold" /> {t('spa.spaHours')}
             </div>
           </div>
         </div>

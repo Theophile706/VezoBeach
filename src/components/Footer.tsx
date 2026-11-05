@@ -18,7 +18,7 @@ export default function Footer() {
       setSubscribed(true)
       setEmail('')
     } catch {
-      console.error('[La Colongette] Newsletter signup failed')
+      console.error('[Le Vezo Beach] Newsletter signup failed')
     } finally {
       setSubscribing(false)
     }
@@ -29,13 +29,13 @@ export default function Footer() {
       <div className="container-luxe py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {/* About */}
         <div>
-          <div className="font-serif text-xl text-white tracking-wider mb-4">La Colongette</div>
+          <div className="font-serif text-xl text-white tracking-wider mb-4">Le Vezo Beach</div>
           <p className="text-sm leading-relaxed">{t('footer.aboutText')}</p>
           <div className="flex items-center gap-4 mt-5">
-            <a href="https://www.facebook.com/hotelroyalpalaceantsirabe" target="_blank" rel="noreferrer" aria-label="Facebook" className="hover:text-gold-500 transition-colors">
+            <a href="https://www.facebook.com/hotelroyalpalaceantsirabe" target="_blank" rel="noreferrer" aria-label="Facebook" className="text-brand-gold hover:text-white transition-colors">
               <Facebook size={20} />
             </a>
-            <a href="https://www.instagram.com/hotelroyalpalace_antsirabe/" target="_blank" rel="noreferrer" aria-label="Instagram" className="hover:text-gold-500 transition-colors">
+            <a href="https://www.instagram.com/hotelroyalpalace_antsirabe/" target="_blank" rel="noreferrer" aria-label="Instagram" className="text-brand-gold hover:text-white transition-colors">
               <Instagram size={20} />
             </a>
           </div>
@@ -49,7 +49,7 @@ export default function Footer() {
             <li><Link to="/restaurant" className="hover:text-gold-500 transition-colors">{t('nav.restaurant')}</Link></li>
             <li><Link to="/piscine-bien-etre" className="hover:text-gold-500 transition-colors">{t('nav.spa')}</Link></li>
             <li><Link to="/reunions-evenements" className="hover:text-gold-500 transition-colors">{t('nav.events')}</Link></li>
-            <li><Link to="/decouvrir-antsirabe" className="hover:text-gold-500 transition-colors">{t('nav.discover')}</Link></li>
+            <li><Link to="/decouvrir-morondava" className="hover:text-gold-500 transition-colors">{t('nav.discover')}</Link></li>
             <li><Link to="/contact" className="hover:text-gold-500 transition-colors">{t('nav.contact')}</Link></li>
           </ul>
         </div>
@@ -86,7 +86,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10 py-6">
         <div className="container-luxe flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-white/50">
-          <span>© {new Date().getFullYear()} La Colongette Antsirabe. {t('footer.rights')}</span>
+          <span>© {new Date().getFullYear()} Le Vezo Beach Morondava. {t('footer.rights')}</span>
           <span>Madagascar</span>
         </div>
       </div>

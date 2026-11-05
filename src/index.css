@@ -11,7 +11,7 @@ body {
 }
 
 ::selection {
-  background-color: #C9A961;
+  background-color: #BC8A0F;
   color: white;
 }
 
@@ -20,14 +20,14 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5F5F0;
+  background: #F7F6FA;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C9A961;
+  background: #BC8A0F;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B8984F;
+  background: #967008;
 }
 
 @layer components {
@@ -51,5 +51,5 @@ body {
 /* React-datepicker overrides for luxury theme */
 .rdp-luxe .react-datepicker {
   font-family: 'Inter', sans-serif;
-  border-color: #EAD9AF;
+  border-color: #EEDDAF;
 }

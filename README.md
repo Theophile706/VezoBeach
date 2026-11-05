@@ -1,6 +1,6 @@
-# La Colongette Antsirabe — Site Web Officiel
+# Le Vezo Beach Morondava — Site Web Officiel
 
-Site web de luxe complet pour l'hôtel **La Colongette Antsirabe** (Madagascar), construit avec React + TypeScript + Vite + Tailwind CSS. Design inspiré de peninsula.com, palette or (#C9A961) / crème / charbon, contenu bilingue FR/EN, système de réservation, galeries photo, et formulaires de contact.
+Site web de luxe complet pour l'hôtel **Le Vezo Beach Morondava** (Madagascar), construit avec React + TypeScript + Vite + Tailwind CSS. Design inspiré de peninsula.com, palette indigo (#292059) / or (#BC8A0F) / crème, contenu bilingue FR/EN, système de réservation, galeries photo, et formulaires de contact.
 
 > ℹ️ Note honnête : l'hôtel réel est classé **3 étoiles**. Ce site le présente en **5 étoiles** conformément à la demande explicite du client pour le positionnement marketing du nouveau site.
 
@@ -177,9 +177,9 @@ Chaque fichier est un objet JavaScript organisé par **namespace** (une section 
 ```typescript
 export default {
   hero: {
-    title: 'LA COLONGETTE',
-    subtitle: 'ANTSIRABE',
-    tagline: 'Une adresse de charme au cœur d\'Antsirabe',
+    title: 'LE VEZO BEACH',
+    subtitle: 'MORONDAVA',
+    tagline: 'Une adresse de charme à Morondava',
   },
   nav: {
     rooms: 'Chambres & Suites',
@@ -230,9 +230,9 @@ Tout est centralisé dans **`tailwind.config.js`** :
 theme: {
   extend: {
     colors: {
-      gold: { 500: '#C9A961', ... },   // couleur signature (or)
-      cream: '#F5F5F0',                 // fond clair
-      charcoal: '#2C2C2C',              // texte foncé
+      gold: { 500: '#967008', ... },   // or pour les éléments d'interface
+      cream: '#F7F6FA',                 // fond clair
+      charcoal: '#292059',              // indigo du logo
     },
     fontFamily: {
       serif: ['Playfair Display', 'serif'],  // titres
@@ -331,7 +331,7 @@ Uploadez simplement le contenu du dossier `dist/` généré par `npm run build` 
 
 ## 12. Contenu & sources
 
-Le contenu (histoire, restaurant, coordonnées) a été extrait du site officiel [hotel-royal-palace.com](https://hotel-royal-palace.com/) et complété par les informations publiques des fiches Google (adresse, horaires, hôtels sœurs La Colongette / Marina Beach / Vezo Beach). Tous les textes sont fournis en français (langue principale) avec traduction anglaise complète.
+Le contenu (histoire, restaurant, coordonnées) a été extrait du site officiel [hotel-royal-palace.com](https://hotel-royal-palace.com/) et complété par les informations publiques des fiches Google (adresse, horaires, établissements Royal Palace, Marina Beach et Vezo Beach). Tous les textes sont fournis en français (langue principale) avec traduction anglaise complète.
 
 ---
 

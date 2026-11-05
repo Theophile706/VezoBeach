@@ -80,7 +80,7 @@ export default function BookingBar({ floating = true }: BookingBarProps) {
             className="group flex-1 flex items-center gap-3 px-6 py-5 cursor-pointer transition-colors duration-200 hover:bg-cream/60 focus-within:bg-cream/70"
             onClick={() => openDatePicker(checkInRef)}
           >
-            <Calendar size={18} className="text-gold-500 shrink-0 transition-transform duration-200 group-hover:scale-110" />
+            <Calendar size={18} className="text-brand-gold shrink-0 transition-transform duration-200 group-hover:scale-110" />
             <div className="flex-1 min-w-0">
               <div className="text-[10px] uppercase tracking-widest2 text-gray-400 font-medium mb-0.5">{t('common.checkIn')}</div>
               <input
@@ -101,7 +101,7 @@ export default function BookingBar({ floating = true }: BookingBarProps) {
             className="group flex-1 flex items-center gap-3 px-6 py-5 cursor-pointer transition-colors duration-200 hover:bg-cream/60 focus-within:bg-cream/70"
             onClick={() => openDatePicker(checkOutRef)}
           >
-            <Calendar size={18} className="text-gold-500 shrink-0 transition-transform duration-200 group-hover:scale-110" />
+            <Calendar size={18} className="text-brand-gold shrink-0 transition-transform duration-200 group-hover:scale-110" />
             <div className="flex-1 min-w-0">
               <div className="text-[10px] uppercase tracking-widest2 text-gray-400 font-medium mb-0.5">{t('common.checkOut')}</div>
               <input
@@ -124,7 +124,7 @@ export default function BookingBar({ floating = true }: BookingBarProps) {
               onClick={() => setGuestsOpen((open) => !open)}
               className="group w-full flex items-center gap-3 px-6 py-5 text-left transition-colors duration-200 hover:bg-cream/60"
             >
-              <Users size={18} className="text-gold-500 shrink-0 transition-transform duration-200 group-hover:scale-110" />
+              <Users size={18} className="text-brand-gold shrink-0 transition-transform duration-200 group-hover:scale-110" />
               <div className="flex-1 min-w-0">
                 <div className="text-[10px] uppercase tracking-widest2 text-gray-400 font-medium mb-0.5">{t('common.roomsGuests')}</div>
                 <div className="text-sm font-medium text-charcoal truncate">{guestsLabel}</div>

@@ -128,7 +128,7 @@ export default function Rooms() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {(t('rooms.amenities', { returnObjects: true }) as string[]).map((item) => (
               <div key={item} className="flex items-center gap-2 text-sm text-charcoal">
-                <Check size={16} className="text-gold-500 shrink-0" />
+                <Check size={16} className="text-brand-gold shrink-0" />
                 {item}
               </div>
             ))}

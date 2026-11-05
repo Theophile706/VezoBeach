@@ -10,7 +10,7 @@ const navItems = [
   { to: '/restaurant', key: 'restaurant' },
   { to: '/piscine-bien-etre', key: 'spa' },
   { to: '/reunions-evenements', key: 'events' },
-  { to: '/decouvrir-antsirabe', key: 'discover' },
+  { to: '/decouvrir-morondava', key: 'discover' },
 ]
 
 export default function Header() {
@@ -48,7 +48,7 @@ export default function Header() {
         <Link to="/" className="flex items-center shrink-0">
           <img
             src={transparent ? '/images/logo.png' : '/images/logo-dark.png'}
-            alt="La Colongette Antsirabe"
+            alt="Le Vezo Beach Morondava"
             className="h-14 md:h-20 w-auto object-contain transition-opacity duration-300"
           />
         </Link>

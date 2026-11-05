@@ -1,5 +1,5 @@
 // ============================================================
-// Global TypeScript type definitions for La Colongette Antsirabe
+// Global TypeScript type definitions for Le Vezo Beach Morondava
 // ============================================================
 
 export interface Room {
