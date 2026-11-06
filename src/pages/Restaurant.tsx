@@ -25,7 +25,7 @@ export default function Restaurant() {
         />
       </AnimatedSection>
 
-      {/* Restaurant menus */}
+      {/* Nos menus et offres spéciales (section temporairement masquée)
       <section className="bg-cream py-20 md:py-24">
         <div className="container-luxe">
           <SectionHeading title={t('restaurant.specialMenusTitle')} />
@@ -54,6 +54,7 @@ export default function Restaurant() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Hours + Specialties */}
       <AnimatedSection className="container-luxe py-20 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-16">

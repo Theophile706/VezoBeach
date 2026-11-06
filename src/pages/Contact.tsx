@@ -61,8 +61,8 @@ export default function Contact() {
               <Mail size={18} className="text-brand-gold mt-0.5 shrink-0" />
               <div>
                 <div className="font-medium text-charcoal">{t('contact.emailInfoLabel')}</div>
-                <a href="mailto:royalpalace.resa@moov.mg" className="text-gray-600 hover:text-gold-600 block">
-                  royalpalace.resa@moov.mg
+                <a href="mailto:vezobeach@gmail.com" className="text-gray-600 hover:text-gold-600 block">
+                  vezobeach@gmail.com
                 </a>
               </div>
             </div>

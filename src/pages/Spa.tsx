@@ -139,7 +139,7 @@ export default function Spa() {
         <div className="container-luxe">
           <SectionHeading eyebrow={t('home.galleryEyebrow')} title={t('spa.heroTitle')} />
           <div className="mt-14">
-            <ImageGallery images={[...poolImages, ...spaImages]} columns={4} />
+            <ImageGallery images={[...poolImages, ...spaImages]} columns={3} />
           </div>
         </div>
       </section>
