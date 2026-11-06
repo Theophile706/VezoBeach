@@ -75,7 +75,7 @@ const fr = {
     sisterTitle: 'Découvrez nos adresses sœurs à Madagascar',
     sisterText: 'Laissez-vous séduire par nos autres établissements, tous marqués par la même qualité de service et un charme singulier.',
     sister1Name: 'Royal Palace',
-    sister1Location: 'Hauts-plateaux',
+    sister1Location: 'Antsirabe',
     sister1Text: "Un lieu unique, empreint d'histoire et d'authenticité.",
     sister2Name: 'Hôtel Marina Beach',
     sister2Location: 'Toamasina',
