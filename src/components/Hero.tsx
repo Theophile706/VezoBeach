@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import BookingBar from './BookingBar'
 
 /**
@@ -17,6 +17,7 @@ import BookingBar from './BookingBar'
  */
 export default function Hero() {
   const { t } = useTranslation()
+  const reduceMotion = useReducedMotion()
 
   return (
     // Hauteur du bloc hero réduite (h-[75vh] au lieu de h-[85vh]) pour remonter
@@ -33,7 +34,7 @@ export default function Hero() {
           `loading="eager"` interdit tout report. Un `<link rel="preload">` dans
           index.html la lance avant même que React ne démarre.
         */}
-        <img
+        <motion.img
           src="/images/hero/hero-building.jpg"
           alt="Le Vezo Beach Morondava — façade de l'hôtel"
           width={1382}
@@ -42,6 +43,16 @@ export default function Hero() {
           fetchPriority="high"
           decoding="async"
           className="w-full h-full object-cover"
+          initial={reduceMotion ? false : { opacity: 0, scale: 1.08 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={
+            reduceMotion
+              ? { duration: 0 }
+              : {
+                  opacity: { duration: 2.4, ease: [0.22, 1, 0.36, 1] },
+                  scale: { duration: 12, ease: [0.25, 0.1, 0.25, 1] },
+                }
+          }
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/50" />
       </div>
@@ -81,7 +92,7 @@ export default function Hero() {
       */}
       </div>
 
-      <div className="relative z-30 px-4 py-6 md:absolute md:bottom-0 md:left-0 md:right-0 md:translate-y-[calc(50%-0.2cm)] md:px-0 md:py-0">
+      <div data-no-loupe className="relative z-30 px-4 py-6 md:absolute md:bottom-0 md:left-0 md:right-0 md:translate-y-[calc(50%-0.2cm)] md:px-0 md:py-0">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { CheckCircle, AlertCircle } from 'lucide-react'
 import type { ContactFormData } from '@/types'
 import { validateEmail, validatePhone } from '@/utils/helpers'
-import { api } from '@/utils/api'
+import { sendRequest } from '@/utils/api'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
@@ -43,13 +43,9 @@ export default function ContactForm() {
     if (!validate()) return
     setStatus('sending')
     try {
-      const result = await api.sendContact(form)
-      if (result.error) {
-        setStatus('error')
-      } else {
-        setStatus('success')
-        setForm({ name: '', email: '', phone: '', subject: '', message: '' })
-      }
+      await sendRequest('contact', form)
+      setStatus('success')
+      setForm({ name: '', email: '', phone: '', subject: '', message: '' })
     } catch {
       setStatus('error')
     }

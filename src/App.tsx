@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { WifiOff } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ImageLoupe from '@/components/ImageLoupe'
 import Home from '@/pages/Home'
 import Rooms from '@/pages/Rooms'
 import Restaurant from '@/pages/Restaurant'
@@ -73,6 +74,7 @@ export default function App() {
       <ScrollToTop />
       <OfflineNotice />
       {!adminArea && <Header />}
+      {!adminArea && <ImageLoupe />}
       {adminArea ? (
         <Suspense fallback={
           <main className="grid min-h-screen place-items-center text-gray-600">

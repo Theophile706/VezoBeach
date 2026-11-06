@@ -155,6 +155,18 @@ async function withFallback<T>(
   return response
 }
 
+const REQUESTS_API_URL = import.meta.env.VITE_REQUESTS_API_URL || 'http://localhost:4100'
+
+/** Envoie une demande de formulaire par e-mail. Lève une erreur si le serveur ne confirme pas l'envoi. */
+export async function sendRequest(type: 'contact' | 'reservation' | 'event', data: object): Promise<void> {
+  const response = await fetch(`${REQUESTS_API_URL}/api/requests`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ type, page: window.location.pathname, data }),
+  })
+  if (!response.ok) throw new Error(`Request failed (${response.status})`)
+}
+
 export const api = {
   // Content (avec repli sur les données locales)
   getRooms: () => withFallback(() => request<any[]>('/content/rooms'), rooms as any[]),
@@ -186,46 +198,6 @@ export const api = {
    */
   getAvailabilityCalendar: (from: string, to: string) =>
     request<RoomAvailability[]>(`/content/availability?from=${from}&to=${to}`),
-
-  createBooking: (data: {
-    guestName: string
-    guestEmail: string
-    guestPhone?: string
-    checkIn: string
-    checkOut: string
-    rooms: number
-    adults: number
-    children: number
-    roomId?: string
-  }) => request<any>('/bookings', {
-    method: 'POST',
-    body: JSON.stringify(data),
-  }),
-
-  // Contact
-  sendContact: (data: {
-    name: string
-    email: string
-    phone: string
-    subject: string
-    message: string
-  }) => request<any>('/contact', {
-    method: 'POST',
-    body: JSON.stringify(data),
-  }),
-
-  sendEventInquiry: (data: {
-    name: string
-    email: string
-    phone?: string
-    subject?: string
-    message: string
-    eventDate: string
-    guestCount: string
-  }) => request<any>('/contact/event-inquiry', {
-    method: 'POST',
-    body: JSON.stringify(data),
-  }),
 
   // Newsletter
   subscribeNewsletter: (email: string) => request<any>('/newsletter', {

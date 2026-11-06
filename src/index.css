@@ -48,6 +48,11 @@ body {
   }
 }
 
+.loupe-active,
+.loupe-active * {
+  cursor: none !important;
+}
+
 /* React-datepicker overrides for luxury theme */
 .rdp-luxe .react-datepicker {
   font-family: 'Inter', sans-serif;

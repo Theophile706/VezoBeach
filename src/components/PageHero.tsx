@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 
 interface PageHeroProps {
   image: string
@@ -15,12 +15,24 @@ interface PageHeroProps {
  * Keeps the same elegant gold/white aesthetic as the homepage hero.
  */
 export default function PageHero({ image, title, subtitle, preserveAspectRatio = false, expanded = false }: PageHeroProps) {
+  const reduceMotion = useReducedMotion()
+
   return (
     <section className={`relative w-full overflow-hidden mt-0 ${expanded ? 'aspect-video' : 'h-[55vh] min-h-[380px]'} ${preserveAspectRatio ? 'bg-black' : ''}`}>
-      <img
+      <motion.img
         src={image}
         alt={title}
         className={`absolute inset-0 w-full h-full ${preserveAspectRatio ? 'object-contain' : 'object-cover'}`}
+        initial={reduceMotion ? false : { opacity: 0, scale: 1.08 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={
+          reduceMotion
+            ? { duration: 0 }
+            : {
+                opacity: { duration: 2.4, ease: [0.22, 1, 0.36, 1] },
+                scale: { duration: 12, ease: [0.25, 0.1, 0.25, 1] },
+              }
+        }
       />
       <div className="absolute inset-0 bg-black/45" />
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">

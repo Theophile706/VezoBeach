@@ -66,6 +66,7 @@ export default function ImageGallery({ images, columns = 3 }: ImageGalleryProps)
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            data-no-loupe
             className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center px-4"
             onClick={close}
           >

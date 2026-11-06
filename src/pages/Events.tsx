@@ -7,7 +7,7 @@ import SectionHeading from '@/components/SectionHeading'
 import { equipmentKeys } from '@/data/events'
 import type { EventFormData, EventRoom } from '@/types'
 import { validateEmail } from '@/utils/helpers'
-import { api, resolveImageUrl } from '@/utils/api'
+import { api, resolveImageUrl, sendRequest } from '@/utils/api'
 
 export default function Events() {
   const { t, i18n } = useTranslation()
@@ -97,21 +97,11 @@ export default function Events() {
 
     setStatus('sending')
     try {
-      const result = await api.sendEventInquiry(form)
-      if (result.error) {
-        console.error('[Le Vezo Beach] Event inquiry failed:', result.error)
-        setSubmitError(
-          typeof result.error === 'string' && result.error !== 'Network error'
-            ? `L'envoi a échoué : ${result.error}`
-            : "L'envoi a échoué. Vérifiez votre connexion et réessayez."
-        )
-        setStatus('idle')
-      } else {
-        setStatus('success')
-      }
+      await sendRequest('event', form)
+      setStatus('success')
     } catch (err) {
-      console.error('[Le Vezo Beach] Event inquiry exception:', err)
-      setSubmitError('Impossible de contacter le serveur. Veuillez réessayer plus tard.')
+      console.error('[Le Vezo Beach] Event inquiry failed:', err)
+      setSubmitError("L'envoi a échoué. Vérifiez votre connexion et réessayez.")
       setStatus('idle')
     }
   }
