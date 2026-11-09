@@ -58,7 +58,7 @@ const fr = {
     highlight1: 'Depuis 2021 à Morondava',
     highlight1Text: "Une adresse de charme sur la côte ouest de Madagascar.",
     highlight2: 'Jardin & Piscine',
-    highlight2Text: 'Un cadre paisible et verdoyant, propice à la détente.',
+    highlight2Text: 'Un cadre paisible , propice à la détente.',
     highlight3: 'Service sur-mesure',
     highlight3Text: "Une équipe attentive à chaque détail de votre séjour.",
     offersEyebrow: 'Offres spéciales',
