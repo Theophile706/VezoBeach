@@ -83,7 +83,7 @@ const en = {
     sister3Name: 'Hôtel Colongette',
     sister3Location: 'Antsirabe',
     sister3Text: 'A 3-star city-centre hotel, for a holiday in a magnificent setting.',
-    ctaTitle: 'Ready for a royal experience?',
+    ctaTitle: 'Ready for a Vezo Beach experience?',
     ctaText: 'Book your stay at Le Vezo Beach Morondava now.',
   },
   rooms: {

@@ -83,7 +83,7 @@ const fr = {
     sister3Name: 'Hôtel Colongette',
     sister3Location: 'Antsirabe',
     sister3Text: 'Hôtel 3 étoiles au centre ville, pour des vacances au cadre magnifique.',
-    ctaTitle: 'Prêt à vivre une expérience royale ?',
+    ctaTitle: 'Prêt à vivre une expérience Vezo Beach ?',
     ctaText: "Réservez dès maintenant votre séjour au Vezo Beach.",
   },
   rooms: {
