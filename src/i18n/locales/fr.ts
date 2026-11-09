@@ -82,7 +82,7 @@ const fr = {
     sister2Text: "À 2 km de l'aéroport, en bord de plage, avec vue imprenable sur la mer.",
     sister3Name: 'Hôtel Colongette',
     sister3Location: 'Antsirabe',
-    sister3Text: 'Hôtel 3 étoiles au bord de la mer, pour des vacances au cadre magnifique.',
+    sister3Text: 'Hôtel 3 étoiles au centre ville, pour des vacances au cadre magnifique.',
     ctaTitle: 'Prêt à vivre une expérience royale ?',
     ctaText: "Réservez dès maintenant votre séjour au Vezo Beach.",
   },

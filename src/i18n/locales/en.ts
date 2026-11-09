@@ -82,7 +82,7 @@ const en = {
     sister2Text: '2km from the airport, beachfront, with breathtaking sea views.',
     sister3Name: 'Hôtel Colongette',
     sister3Location: 'Antsirabe',
-    sister3Text: 'A 3-star seaside hotel for a holiday in a magnificent setting.',
+    sister3Text: 'A 3-star city-centre hotel, for a holiday in a magnificent setting.',
     ctaTitle: 'Ready for a royal experience?',
     ctaText: 'Book your stay at Le Vezo Beach Morondava now.',
   },
