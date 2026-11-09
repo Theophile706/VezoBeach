@@ -113,7 +113,6 @@ const en = {
     view: 'View',
     bedType: 'Bed Type',
     photoSoon: 'Photo coming soon',
-    seasonNote: '2026 high-season rates, applicable in April, May, June, July, August, September, October and December.',
     practicalInfo: [
       'Check-in: 2:00 PM',
       'Check-out: 11:00 AM',

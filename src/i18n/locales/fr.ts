@@ -113,7 +113,6 @@ const fr = {
     view: 'Vue',
     bedType: 'Literie',
     photoSoon: 'Photo à venir',
-    seasonNote: 'Tarifs haute saison 2026, applicables en avril, mai, juin, juillet, août, septembre, octobre et décembre.',
     practicalInfo: [
       'Check-in : 14h00',
       'Check-out : 11h00',

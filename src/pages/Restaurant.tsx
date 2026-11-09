@@ -127,7 +127,7 @@ export default function Restaurant() {
       <AnimatedSection className="container-luxe py-20 md:py-24">
         <SectionHeading title={t('restaurant.ctaTitle')} />
         <div className="mt-14">
-          <ImageGallery images={restaurantImages.slice(0, 4)} columns={4} />
+          <ImageGallery images={restaurantImages.slice(0, 4)} columns={4} fit="cover" />
         </div>
       </AnimatedSection>
     </>

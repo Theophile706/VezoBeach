@@ -51,7 +51,6 @@ export default function Rooms() {
             <li key={item}>{item}</li>
           ))}
         </ul>
-        <p className="mt-6 text-center text-xs text-gray-500">{t('rooms.seasonNote')}</p>
       </AnimatedSection>
 
       {/* Gallery */}

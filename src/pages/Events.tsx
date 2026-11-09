@@ -124,7 +124,7 @@ export default function Events() {
             {eventRooms.length > 0 ? eventRooms.map((room, idx) => (
               <AnimatedSection key={room.id} delay={idx * 0.1} className="bg-white rounded-md overflow-hidden shadow-card">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img src={resolveImageUrl(room.image)} alt={(english ? room.nameEn : room.name) || t(`events.${room.key}Name`)} className="w-full h-full object-contain bg-cream" loading="lazy" />
+                  <img src={resolveImageUrl(room.image)} alt={(english ? room.nameEn : room.name) || t(`events.${room.key}Name`)} className="w-full h-full object-cover bg-cream" loading="lazy" />
                 </div>
                 <div className="p-6">
                   <h3 className="font-serif text-lg mb-2">{(english ? room.nameEn : room.name) || t(`events.${room.key}Name`)}</h3>

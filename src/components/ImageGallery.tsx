@@ -7,6 +7,7 @@ import type { GalleryImage } from '@/types'
 interface ImageGalleryProps {
   images: GalleryImage[]
   columns?: 2 | 3 | 4
+  fit?: 'contain' | 'cover'
 }
 
 /**
@@ -15,7 +16,7 @@ interface ImageGalleryProps {
  * Responsive image grid with a fullscreen lightbox (prev/next/close,
  * keyboard navigation). Lazy-loads images via native `loading="lazy"`.
  */
-export default function ImageGallery({ images, columns = 3 }: ImageGalleryProps) {
+export default function ImageGallery({ images, columns = 3, fit = 'contain' }: ImageGalleryProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   const close = useCallback(() => setActiveIndex(null), [])
@@ -53,7 +54,7 @@ export default function ImageGallery({ images, columns = 3 }: ImageGalleryProps)
               src={resolveImageUrl(img.src)}
               alt={img.alt}
               loading="lazy"
-              className="w-full h-full object-contain"
+              className={`w-full h-full ${fit === 'cover' ? 'object-cover' : 'object-contain'}`}
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
           </button>

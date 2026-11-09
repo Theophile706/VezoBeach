@@ -61,7 +61,7 @@ export default function Home() {
                     <img
                       src={s.image}
                       alt={t(`home.${s.key}Title`)}
-                      className="w-full h-full object-contain bg-cream"
+                      className="w-full h-full object-cover bg-cream"
                       loading="lazy"
                     />
                   </div>
@@ -116,7 +116,7 @@ export default function Home() {
       <AnimatedSection className="container-luxe py-20 md:py-28">
         <SectionHeading eyebrow={t('home.galleryEyebrow')} title={t('home.galleryTitle')} />
         <div className="mt-14">
-          <ImageGallery images={homeGallery} columns={4} />
+          <ImageGallery images={homeGallery} columns={4} fit="cover" />
         </div>
       </AnimatedSection>
 
