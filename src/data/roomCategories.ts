@@ -8,7 +8,7 @@ export interface RoomCategory {
 
 export const roomCategories: RoomCategory[] = [
   { id: 'standardGroundFloor', price: 273000, image: '/images/Photo-chambre.jpg' },
-  { id: 'standardSimple', price: 288750, image: '/images/IMG_9572.webp' },
+  { id: 'standardSimple', price: 288750, image: '/images/chmabres%20standars%20simple.jpg' },
   { id: 'standardPanoramic', price: 328650 },
   { id: 'suite', price: 404250 },
   { id: 'juniorApartment', price: 498750 },
