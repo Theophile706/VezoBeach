@@ -58,7 +58,7 @@ export default function Rooms() {
         <div className="container-luxe">
           <SectionHeading eyebrow={t('home.galleryEyebrow')} title={t('rooms.heroTitle')} />
           <div className="mt-14">
-            <ImageGallery images={roomImages} columns={4} />
+            <ImageGallery images={roomImages} columns={4} fit="cover" />
           </div>
         </div>
       </section>
