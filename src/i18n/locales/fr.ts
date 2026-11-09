@@ -55,7 +55,7 @@ const fr = {
     service4Text: 'Des espaces élégants pour séminaires, mariages et réceptions.',
     highlightsEyebrow: 'Pourquoi nous choisir',
     highlightsTitle: 'Le Vezo Beach en quelques mots',
-    highlight1: 'Depuis 2012 à Morondava',
+    highlight1: 'Depuis 2021 à Morondava',
     highlight1Text: "Une adresse de charme sur la côte ouest de Madagascar.",
     highlight2: 'Jardin & Piscine',
     highlight2Text: 'Un cadre paisible et verdoyant, propice à la détente.',

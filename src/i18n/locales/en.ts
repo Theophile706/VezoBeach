@@ -55,7 +55,7 @@ const en = {
     service4Text: 'Elegant spaces for seminars, weddings and receptions.',
     highlightsEyebrow: 'Why Choose Us',
     highlightsTitle: 'Le Vezo Beach in a few words',
-    highlight1: 'Since 2012 in Morondava',
+    highlight1: 'Since 2021 in Morondava',
     highlight1Text: 'A charming address on Madagascar’s west coast.',
     highlight2: 'Garden & Pool',
     highlight2Text: 'A peaceful, green setting perfect for relaxation.',
