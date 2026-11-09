@@ -91,7 +91,7 @@ const fr = {
     heroSubtitle: 'Offrez-vous une expérience unique, où chaque détail est pensé pour votre bien-être',
     introTitle: 'Un cocon de confort et de raffinement',
     introText:
-      "Chambres spacieuses, service d'exception et atmosphère prestigieuse font de votre séjour au Vezo Beach un véritable moment d'exception. Chaque chambre a été conçue pour allier confort moderne et élégance intemporelle.",
+      "Implanté sur la plage de Nosy Kely et à 30 minutes de l'incontournable Allée des Baobabs, le Vezo Beach ⭐ ⭐ ⭐ vous propose un séjour agréable en front de mer. L'hôtel allie élégance, boiserie et savoir-faire malgache. Chambres spacieuses, service d'exception et atmosphère prestigieuse font de votre séjour au Vezo Beach un véritable moment d'exception. Chaque chambre a été conçue pour allier confort moderne et élégance intemporelle.",
     amenitiesTitle: 'Équipements inclus',
     amenities: [
       'Climatisation individuelle',

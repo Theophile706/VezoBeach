@@ -91,7 +91,7 @@ const en = {
     heroSubtitle: 'Enjoy a unique experience where every detail is designed for your wellbeing',
     introTitle: 'A cocoon of comfort and refinement',
     introText:
-      "Spacious rooms, exceptional service and a prestigious atmosphere make your stay at Le Vezo Beach a truly exceptional moment. Each room has been designed to combine modern comfort with timeless elegance.",
+      "Set on Nosy Kely beach and 30 minutes from the must-see Avenue of the Baobabs, Le Vezo Beach ⭐ ⭐ ⭐ offers a pleasant beachfront stay. The hotel combines elegance, woodwork and Malagasy craftsmanship. Spacious rooms, exceptional service and a prestigious atmosphere make your stay at Le Vezo Beach a truly exceptional moment. Each room has been designed to combine modern comfort with timeless elegance.",
     amenitiesTitle: 'Included Amenities',
     amenities: [
       'Individual air conditioning',
