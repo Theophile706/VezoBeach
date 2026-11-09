@@ -112,6 +112,63 @@ const en = {
     size: 'Size',
     view: 'View',
     bedType: 'Bed Type',
+    photoSoon: 'Photo coming soon',
+    seasonNote: '2026 high-season rates, applicable in April, May, June, July, August, September, October and December.',
+    practicalInfo: [
+      'Check-in: 2:00 PM',
+      'Check-out: 11:00 AM',
+      'Room service: 15%',
+      'Extra bed: 30,000 Ar',
+      'Laundry: rate list available in your room',
+    ],
+    categories: {
+      standardGroundFloor: {
+        name: 'Standard Room Ground Floor',
+        description: 'Double bed, shower and toilet',
+      },
+      standardSimple: {
+        name: 'Standard Room',
+        description: 'Double bed, balcony, shower and toilet',
+      },
+      standardPanoramic: {
+        name: 'Standard Room Panoramic View',
+        description: 'Double bed, balcony, shower and toilet',
+      },
+      suite: {
+        name: 'Suite',
+        description: 'Double bed, living room, shower and toilet, jacuzzi',
+      },
+      juniorApartment: {
+        name: 'Junior Apartment 90 m²',
+        description: '2 bedrooms, 1 double bed in each, balcony, shower and toilet',
+      },
+      seniorApartment120: {
+        name: 'Senior Apartment 120 m²',
+        description: '2 bedrooms with 2 double beds, balcony, 2 showers and toilets',
+      },
+      seniorApartment150: {
+        name: 'Senior Apartment 150 m²',
+        description: '2 bedrooms with 2 double beds, balcony, showers and toilet',
+      },
+      villa02: {
+        name: 'Villa 02',
+        description: '1 bedroom with double bed and 1 bunk bed, kitchenette, shower and toilet',
+      },
+      villa01: {
+        name: 'Villa 01',
+        description:
+          '1 bedroom with double bed, 1 bedroom with small bed, lounge corner, kitchen and dining room, toilet, bathroom',
+      },
+    },
+    equipments: [
+      'Television',
+      'Wifi',
+      'Minibar',
+      'Air conditioning',
+      'Individual safe',
+      'Kettle',
+      'Hair dryer',
+    ],
   },
   roomsData: {
     classic: {
@@ -159,11 +216,29 @@ const en = {
     barText: 'Creative cocktails, fresh natural juices and carefully selected wines. Our bar was designed to awaken all your senses.',
     hoursTitle: 'Opening Hours',
     breakfast: 'Breakfast',
-    breakfastHours: '6:30 AM – 10:00 AM',
+    breakfastHours: '6:00 AM – 10:00 AM',
     lunch: 'Lunch',
-    lunchHours: '12:00 PM – 2:30 PM',
+    lunchHours: '12:00 PM – 2:00 PM',
     dinner: 'Dinner',
-    dinnerHours: '7:00 PM – 10:00 PM',
+    dinnerHours: '6:00 PM – 10:30 PM',
+    snack: 'Snack',
+    snackHours: '10:00 AM – 10:30 PM',
+    formulasTitle: 'Packages & Rates',
+    formulasNote: 'Rates per person',
+    formulas: [
+      {
+        title: 'Bed & breakfast',
+        items: ['Classic breakfast: 18,000 Ar extra', 'Continental breakfast: 22,000 Ar extra', 'American breakfast: 28,000 Ar extra'],
+      },
+      {
+        title: 'Half board',
+        items: ['Continental breakfast: 102,000 Ar extra', 'American breakfast: 108,000 Ar extra'],
+      },
+      {
+        title: 'Full board',
+        items: ['Continental breakfast: 182,000 Ar extra', 'American breakfast: 188,000 Ar extra'],
+      },
+    ],
     specialtiesTitle: "Chef's Specialties",
     specialty1: 'Traditional Malagasy Romazava',
     specialty2: 'Grilled fish with Madagascar vanilla sauce',
@@ -205,7 +280,8 @@ const en = {
     treatment5Duration: '90 min',
     bookTreatment: 'Book This Treatment',
     hoursTitle: 'Access Hours',
-    poolHours: 'Pool: 7:00 AM – 7:00 PM',
+    poolHours: 'Pool: 8:00 AM – 8:00 PM',
+    poolGuestRates: 'Non-hotel guests: adults 12,000 Ar, children 8,000 Ar',
     spaHours: 'Spa: 9:00 AM – 8:00 PM (by appointment)',
   },
   events: {
@@ -255,6 +331,10 @@ const en = {
     attraction2: 'Kirindy Reserve (excursion)',
     attraction3: 'Local craft market',
     attraction4: 'Morondava Beach',
+    transferTitle: 'Airport / hotel transfer',
+    transferText: '30,000 Ar per person',
+    carTitle: 'Car rental per day',
+    carText: 'From 500,000 Ar depending on the itinerary (fuel not included)',
     transportTitle: 'Transport & Access',
     transportText:
       'Morondava can be reached by air or by road from other regions of Madagascar. Contact our team to arrange your transfer and plan your stay.',

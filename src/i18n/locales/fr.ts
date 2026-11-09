@@ -112,6 +112,63 @@ const fr = {
     size: 'Superficie',
     view: 'Vue',
     bedType: 'Literie',
+    photoSoon: 'Photo à venir',
+    seasonNote: 'Tarifs haute saison 2026, applicables en avril, mai, juin, juillet, août, septembre, octobre et décembre.',
+    practicalInfo: [
+      'Check-in : 14h00',
+      'Check-out : 11h00',
+      'Room service : 15 %',
+      'Lit supplémentaire : 30 000 Ar',
+      'Blanchisserie : grille tarifaire disponible dans la chambre',
+    ],
+    categories: {
+      standardGroundFloor: {
+        name: 'Chambre Standard RDC',
+        description: 'Grand lit double, douche et toilettes',
+      },
+      standardSimple: {
+        name: 'Chambre Standard simple',
+        description: 'Grand lit double, balcon, douche et toilettes',
+      },
+      standardPanoramic: {
+        name: 'Chambre Standard Vue Panoramique',
+        description: 'Grand lit double, balcon, douche et toilettes',
+      },
+      suite: {
+        name: 'Suite',
+        description: 'Grand lit double, salon, douche et toilettes, jacuzzi',
+      },
+      juniorApartment: {
+        name: 'Appartement Junior 90 m²',
+        description: '2 chambres, 1 grand lit double chacune, balcon, douche et toilettes',
+      },
+      seniorApartment120: {
+        name: 'Appartement Sénior 120 m²',
+        description: '2 chambres avec 2 grands lits, balcon, 2 douches et toilettes',
+      },
+      seniorApartment150: {
+        name: 'Appartement Sénior 150 m²',
+        description: '2 chambres avec 2 grands lits, balcon, douches et toilette',
+      },
+      villa02: {
+        name: 'Villa 02',
+        description: '1 chambre avec grand lit double et 1 lit superposé, kitchenette, douche toilette',
+      },
+      villa01: {
+        name: 'Villa 01',
+        description:
+          '1 chambre avec grand lit double, 01 chambre avec petit lit, coin salon, cuisine et salle à manger, toilette, salle de bain',
+      },
+    },
+    equipments: [
+      'Télévision',
+      'Wifi',
+      'Minibar',
+      'Climatiseur',
+      'Coffre individuel',
+      'Bouilloire',
+      'Sèche-cheveux',
+    ],
   },
   roomsData: {
     classic: {
@@ -159,11 +216,29 @@ const fr = {
     barText: 'Cocktails créatifs, jus frais naturels et vins soigneusement sélectionnés. Notre bar a été pensé pour éveiller tous vos sens.',
     hoursTitle: "Horaires d'ouverture",
     breakfast: 'Petit-déjeuner',
-    breakfastHours: '6h30 – 10h00',
+    breakfastHours: '6h00 – 10h00',
     lunch: 'Déjeuner',
-    lunchHours: '12h00 – 14h30',
+    lunchHours: '12h00 – 14h00',
     dinner: 'Dîner',
-    dinnerHours: '19h00 – 22h00',
+    dinnerHours: '18h00 – 22h30',
+    snack: 'Snack',
+    snackHours: '10h00 – 22h30',
+    formulasTitle: 'Formules & tarifs',
+    formulasNote: 'Tarifs par personne',
+    formulas: [
+      {
+        title: 'Bed & breakfast',
+        items: ['Si classique : 18 000 Ar en sus', 'Si continental : 22 000 Ar en sus', 'Si américain : 28 000 Ar en sus'],
+      },
+      {
+        title: 'Demi-pension',
+        items: ['Si PDJ continental : 102 000 Ar en sus', 'Si PDJ américain : 108 000 Ar en sus'],
+      },
+      {
+        title: 'Pension complète',
+        items: ['Si PDJ continental : 182 000 Ar en sus', 'Si PDJ américain : 188 000 Ar en sus'],
+      },
+    ],
     specialtiesTitle: 'Spécialités du Chef',
     specialty1: 'Romazava traditionnel malgache',
     specialty2: 'Poisson grillé sauce vanille de Madagascar',
@@ -205,7 +280,8 @@ const fr = {
     treatment5Duration: '90 min',
     bookTreatment: 'Réserver ce soin',
     hoursTitle: "Horaires d'accès",
-    poolHours: 'Piscine : 7h00 – 19h00',
+    poolHours: 'Piscine : 8h00 – 20h00',
+    poolGuestRates: 'Clients externes : adultes 12 000 Ar, enfants 8 000 Ar',
     spaHours: 'Spa : 9h00 – 20h00 (sur réservation)',
   },
   events: {
@@ -255,6 +331,10 @@ const fr = {
     attraction2: 'Réserve de Kirindy (excursion)',
     attraction3: 'Marché artisanal local',
     attraction4: 'Plage de Morondava',
+    transferTitle: 'Transfert aéroport / hôtel',
+    transferText: '30 000 Ar par personne',
+    carTitle: 'Location de voiture à la journée',
+    carText: 'À partir de 500 000 Ar selon le circuit (carburant en sus)',
     transportTitle: 'Transport & Accès',
     transportText:
       "Morondava est accessible par avion ou par la route depuis différentes régions de Madagascar. Contactez notre équipe pour organiser votre transfert et préparer votre séjour.",

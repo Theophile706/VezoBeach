@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { Bus, Car } from 'lucide-react'
 import PageHero from '@/components/PageHero'
 import AnimatedSection from '@/components/AnimatedSection'
 import SectionHeading from '@/components/SectionHeading'
@@ -13,10 +14,24 @@ export default function Discover() {
         title={t('discover.heroTitle')}
         subtitle={t('discover.heroSubtitle')}
         expanded
+        loupe
       />
 
       <AnimatedSection className="container-luxe py-20 md:py-24">
         <SectionHeading title={t('discover.introTitle')} text={t('discover.introText')} />
+      </AnimatedSection>
+
+      <AnimatedSection className="container-luxe pb-20 md:pb-24 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="bg-white shadow-card rounded-md p-8">
+          <Bus className="text-brand-gold mb-4" size={24} aria-hidden="true" />
+          <h3 className="font-serif text-xl mb-2">{t('discover.transferTitle')}</h3>
+          <p className="text-gray-600 leading-relaxed">{t('discover.transferText')}</p>
+        </div>
+        <div className="bg-white shadow-card rounded-md p-8">
+          <Car className="text-brand-gold mb-4" size={24} aria-hidden="true" />
+          <h3 className="font-serif text-xl mb-2">{t('discover.carTitle')}</h3>
+          <p className="text-gray-600 leading-relaxed">{t('discover.carText')}</p>
+        </div>
       </AnimatedSection>
 
       {/*

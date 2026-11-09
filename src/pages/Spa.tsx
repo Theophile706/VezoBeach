@@ -75,7 +75,7 @@ export default function Spa() {
 
   return (
     <>
-      <PageHero image="/images/Photo-Bien-etre-1200.jpg" title={t('spa.heroTitle')} subtitle={t('spa.heroSubtitle')} />
+      <PageHero image="/images/Photo-Bien-etre-1200.jpg" title={t('spa.heroTitle')} subtitle={t('spa.heroSubtitle')} loupe />
 
       {/* Pool section */}
       <AnimatedSection className="container-luxe py-20 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -83,9 +83,10 @@ export default function Spa() {
           <div className="section-eyebrow">{t('spa.poolEyebrow')}</div>
           <h2 className="section-title mb-5">{t('spa.poolTitle')}</h2>
           <p className="text-gray-600 leading-relaxed">{t('spa.poolText')}</p>
-          <div className="mt-6 flex items-center gap-3 text-sm text-charcoal">
+          <div className="mt-6 flex items-center gap-3 text-base text-charcoal">
             <Clock size={16} className="text-brand-gold" /> {t('spa.poolHours')}
           </div>
+          <p className="mt-3 text-base text-gray-600">{t('spa.poolGuestRates')}</p>
         </div>
         <div className="grid grid-cols-2 gap-4">
           <img src="/images/Photo-Spa-et-Detente-2.jpg" alt="Piscine" className="rounded-md aspect-square object-cover" loading="lazy" />
@@ -104,7 +105,7 @@ export default function Spa() {
             <div className="section-eyebrow">{t('spa.spaEyebrow')}</div>
             <h2 className="section-title mb-5">{t('spa.spaTitle')}</h2>
             <p className="text-gray-600 leading-relaxed">{t('spa.spaText')}</p>
-            <div className="mt-6 flex items-center gap-3 text-sm text-charcoal">
+            <div className="mt-6 flex items-center gap-3 text-base text-charcoal">
               <Clock size={16} className="text-brand-gold" /> {t('spa.spaHours')}
             </div>
           </div>
@@ -119,12 +120,12 @@ export default function Spa() {
             <div key={tr.id} className="border border-gray-200 rounded-md p-5 hover:border-gold-500 transition-colors">
               <div>
                 <div className="font-medium text-charcoal">{treatmentName(tr)}</div>
-                <div className="text-xs text-gray-500 mt-1">{treatmentDuration(tr)}</div>
+                <div className="text-sm text-gray-600 mt-1">{treatmentDuration(tr)}</div>
                 {description(tr) && (
-                  <p className="mt-2 max-w-sm text-xs text-gray-500">{description(tr)}</p>
+                  <p className="mt-2 max-w-sm text-sm text-gray-600">{description(tr)}</p>
                 )}
               </div>
-              <Link to="/contact#booking" className="mt-4 inline-block text-xs text-gold-600 hover:text-gold-700 underline">
+              <Link to="/contact#booking" className="mt-4 inline-block text-sm text-gold-600 hover:text-gold-700 underline">
                 {t('spa.bookTreatment')}
               </Link>
             </div>

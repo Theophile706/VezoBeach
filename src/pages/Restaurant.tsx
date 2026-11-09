@@ -14,7 +14,7 @@ export default function Restaurant() {
 
   return (
     <>
-      <PageHero image="/images/Photo-Bar-et-Restaurants-1200.jpg" title={t('restaurant.heroTitle')} subtitle={t('restaurant.heroSubtitle')} />
+      <PageHero image="/images/Photo-Bar-et-Restaurants-1200.jpg" title={t('restaurant.heroTitle')} subtitle={t('restaurant.heroSubtitle')} loupe />
 
       {/* Section intro */}
       <AnimatedSection className="container-luxe py-20 md:py-24">
@@ -67,10 +67,26 @@ export default function Restaurant() {
               ['breakfast', 'breakfastHours'],
               ['lunch', 'lunchHours'],
               ['dinner', 'dinnerHours'],
+              ['snack', 'snackHours'],
             ].map(([label, hours]) => (
               <div key={label} className="flex justify-between border-b border-gray-100 pb-3">
                 <span className="font-medium text-charcoal">{t(`restaurant.${label}`)}</span>
                 <span className="text-gray-600">{t(`restaurant.${hours}`)}</span>
+              </div>
+            ))}
+          </div>
+
+          <h4 className="font-serif text-xl mt-10 mb-1">{t('restaurant.formulasTitle')}</h4>
+          <p className="text-xs text-gray-500 mb-5">{t('restaurant.formulasNote')}</p>
+          <div className="space-y-5">
+            {(t('restaurant.formulas', { returnObjects: true }) as { title: string; items: string[] }[]).map((formula) => (
+              <div key={formula.title}>
+                <div className="font-medium text-charcoal mb-2">{formula.title}</div>
+                <ul className="space-y-1.5 text-sm text-gray-600">
+                  {formula.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>

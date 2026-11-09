@@ -37,6 +37,7 @@ export default function Hero() {
         <motion.img
           src="/images/hero/hero-building.jpg"
           alt="Le Vezo Beach Morondava — façade de l'hôtel"
+          data-loupe
           width={1382}
           height={745}
           loading="eager"

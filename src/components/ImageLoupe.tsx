@@ -5,12 +5,13 @@ const LENS_SIZE = 180
 const ZOOM = 2.2
 const FOLLOW = 0.22
 const MIN_IMAGE_WIDTH = 160
+const IDLE_HIDE_MS = 5000
 
 function isLoupeTarget(img: HTMLImageElement) {
   return (
+    img.hasAttribute('data-loupe') &&
     img.naturalWidth > 0 &&
-    img.getBoundingClientRect().width >= MIN_IMAGE_WIDTH &&
-    img.closest('header, footer, [data-no-loupe]') === null
+    img.getBoundingClientRect().width >= MIN_IMAGE_WIDTH
   )
 }
 
@@ -37,8 +38,8 @@ function findImageAt(x: number, y: number) {
 }
 
 /**
- * Replaces the cursor over images with a circular magnifier (fine pointers only).
- * Opt out any subtree with `data-no-loupe`.
+ * Replaces the cursor over images marked `data-loupe` with a circular magnifier (fine pointers only).
+ * The lens sits below z-10 content so text stays readable above it.
  */
 export default function ImageLoupe() {
   const [src, setSrc] = useState<string | null>(null)
@@ -53,6 +54,7 @@ export default function ImageLoupe() {
 
     const root = document.documentElement
     let frame = 0
+    let idleTimer = 0
 
     const render = () => {
       const img = hoveredRef.current
@@ -102,10 +104,16 @@ export default function ImageLoupe() {
 
     const stop = () => {
       cancelAnimationFrame(frame)
+      clearTimeout(idleTimer)
       frame = 0
       hoveredRef.current = null
       root.classList.remove('loupe-active')
       setSrc(null)
+    }
+
+    const armIdle = () => {
+      clearTimeout(idleTimer)
+      idleTimer = window.setTimeout(stop, IDLE_HIDE_MS)
     }
 
     const update = () => {
@@ -127,15 +135,19 @@ export default function ImageLoupe() {
 
     const onPointerMove = (e: PointerEvent) => {
       pointerRef.current = { x: e.clientX, y: e.clientY }
+      armIdle()
       update()
     }
 
     document.addEventListener('pointermove', onPointerMove)
-    window.addEventListener('scroll', update, { capture: true, passive: true })
+    const onScroll = () => {
+      if (hoveredRef.current) update()
+    }
+    window.addEventListener('scroll', onScroll, { capture: true, passive: true })
     root.addEventListener('mouseleave', stop)
     return () => {
       document.removeEventListener('pointermove', onPointerMove)
-      window.removeEventListener('scroll', update, { capture: true })
+      window.removeEventListener('scroll', onScroll, { capture: true })
       root.removeEventListener('mouseleave', stop)
       stop()
     }
@@ -150,20 +162,20 @@ export default function ImageLoupe() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
           style={{ width: LENS_SIZE, height: LENS_SIZE }}
-          className="pointer-events-none fixed left-0 top-0 z-[60]"
+          className="pointer-events-none fixed left-0 top-0 z-[5]"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.4 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="relative h-full w-full overflow-hidden rounded-full border border-gold-500/80 bg-gray-100 shadow-2xl"
+            className="relative h-full w-full overflow-hidden rounded-full bg-gray-100 shadow-2xl"
           >
             <img
               ref={zoomedRef}
               src={src}
               alt=""
               draggable={false}
-              className="absolute left-0 top-0 max-w-none select-none"
+              className="absolute left-0 top-0 max-w-none select-none animate-loupe-tremble"
             />
           </motion.div>
         </motion.div>

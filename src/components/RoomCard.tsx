@@ -1,83 +1,52 @@
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
-import { Maximize, Users, BedDouble, Eye } from 'lucide-react'
-import type { Room } from '@/types'
-import { resolveImageUrl } from '@/utils/api'
+import { Check, ImagePlus } from 'lucide-react'
+import type { RoomCategory } from '@/data/roomCategories'
 
 interface RoomCardProps {
-  room: Room
-  featured?: boolean
-  availability?: { availableRooms: number; available: boolean }
+  category: RoomCategory
 }
 
-/**
- * RoomCard
- * --------
- * Displays a room's photo, name/description (via i18n roomsData.<translationKey>),
- * key facts (size, guests, view) with a booking CTA.
- */
-export default function RoomCard({ room, featured = false, availability }: RoomCardProps) {
+export default function RoomCard({ category }: RoomCardProps) {
   const { t, i18n } = useTranslation()
-  const base = `roomsData.${room.translationKey}`
-  const english = i18n.resolvedLanguage?.startsWith('en')
-  const roomName = (english ? room.nameEn : room.name) || t(`${base}.name`)
-  const roomDescription = (english ? room.descriptionEn : room.description) || t(`${base}.description`)
+  const name = t(`rooms.categories.${category.id}.name`)
+  const description = t(`rooms.categories.${category.id}.description`)
+  const equipments = t('rooms.equipments', { returnObjects: true }) as string[]
+
   return (
-    <div className="group bg-white shadow-card rounded-md overflow-hidden flex flex-col h-full">
-      {/* Image */}
-      <div className="relative aspect-[4/3] overflow-hidden">
-        <img
-          src={resolveImageUrl(room.images[0])}
-          alt={roomName}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-          loading="lazy"
-        />
-        {featured && (
-          <span className="absolute top-4 left-4 bg-gold-500 text-white text-[10px] uppercase tracking-widest2 px-3 py-1.5">
-            ★ Premium
-          </span>
+    <article className="group bg-white shadow-card rounded-md overflow-hidden flex flex-col h-full transition-transform duration-500 hover:-translate-y-1">
+      <div className="relative aspect-[4/3] overflow-hidden bg-cream">
+        {category.image ? (
+          <img
+            src={category.image}
+            alt={name}
+            loading="lazy"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+        ) : (
+          <div className="w-full h-full flex flex-col items-center justify-center gap-2 border border-dashed border-gray-300 text-gray-400">
+            <ImagePlus size={28} />
+            <span className="text-[10px] uppercase tracking-widest2">{t('rooms.photoSoon')}</span>
+          </div>
         )}
       </div>
 
-      {/* Contenu */}
       <div className="p-6 flex flex-col flex-1">
-        <h3 className="font-serif text-xl text-charcoal mb-2">{roomName}</h3>
-        <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-1">
-          {roomDescription}
+        <h3 className="font-serif text-xl text-charcoal mb-2">{name}</h3>
+        <p className="text-sm text-gray-600 leading-relaxed mb-5">{description}</p>
+
+        <p className="font-serif text-2xl text-charcoal mb-6">
+          {category.price.toLocaleString(i18n.language)} Ar
         </p>
 
-        {/* Caractéristiques */}
-        <div className="flex flex-wrap gap-4 text-xs text-gray-500 mb-5 border-t border-gray-100 pt-4">
-          <span className="flex items-center gap-1.5">
-            <Maximize size={14} className="text-brand-gold" /> {room.size} m²
-          </span>
-          <span className="flex items-center gap-1.5">
-            <Users size={14} className="text-brand-gold" /> {room.maxGuests} {t('rooms.guests')}
-          </span>
-          <span className="flex items-center gap-1.5">
-            <BedDouble size={14} className="text-brand-gold" /> {t(`${base}.bedType`)}
-          </span>
-          <span className="flex items-center gap-1.5">
-            <Eye size={14} className="text-brand-gold" /> {t(`${base}.view`)}
-          </span>
-        </div>
-
-        {availability && (
-          <p className={`mb-4 text-xs ${availability.available ? 'text-green-700' : 'text-red-600'}`}>
-            {availability.available
-              ? t('rooms.availabilityAvailable', { count: availability.availableRooms })
-              : t('rooms.availabilityUnavailable')}
-          </p>
-        )}
-        
-        {/* Bouton de réservation */}
-        <Link
-          to={`/contact?room=${room.id}#booking`}
-          className="btn-outline !py-2.5 !px-5 text-xs text-center"
-        >
-          {t('rooms.bookThisRoom')}
-        </Link>
+        <ul className="mt-auto flex flex-wrap gap-x-4 gap-y-2 text-xs text-gray-500 border-t border-gray-100 pt-4">
+          {equipments.map((item) => (
+            <li key={item} className="flex items-center gap-1.5">
+              <Check size={12} className="text-brand-gold shrink-0" />
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
-    </div>
+    </article>
   )
 }
