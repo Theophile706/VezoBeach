@@ -61,7 +61,7 @@ export default function Home() {
                     <img
                       src={s.image}
                       alt={t(`home.${s.key}Title`)}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-contain bg-cream"
                       loading="lazy"
                     />
                   </div>
@@ -128,7 +128,7 @@ export default function Home() {
             {sisterHotels.map((h) => (
               <div key={h.key} className="bg-white rounded-md overflow-hidden shadow-card">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img src={h.image} alt={t(`home.${h.key}Name`)} className="w-full h-full object-cover" loading="lazy" />
+                  <img src={h.image} alt={t(`home.${h.key}Name`)} className="w-full h-full object-contain bg-cream" loading="lazy" />
                 </div>
                 <div className="p-6">
                   <h3 className="font-serif text-lg mb-1">{t(`home.${h.key}Name`)}</h3>

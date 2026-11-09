@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Facebook, Instagram } from 'lucide-react'
+import { Facebook, Instagram, MapPin, Phone, Mail } from 'lucide-react'
 import { useState } from 'react'
 import { api } from '@/utils/api'
 
@@ -57,7 +57,30 @@ export default function Footer() {
         {/* Contact */}
         <div>
           <div className="text-white uppercase tracking-widest2 text-xs mb-5 font-medium">{t('footer.contactTitle')}</div>
-          <p className="text-sm">{t('footer.contactComingSoon')}</p>
+          <div className="text-sm space-y-4 leading-relaxed">
+            <div className="flex items-start gap-3">
+              <MapPin size={18} className="text-brand-gold shrink-0 mt-0.5" aria-hidden="true" />
+              <p>Plage de Nosy Kely, Morondava, Madagascar</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <Phone size={18} className="text-brand-gold shrink-0 mt-0.5" aria-hidden="true" />
+              <a href="tel:+261320534040" className="hover:text-gold-500 transition-colors">+261 32 05 340 40</a>
+            </div>
+            <div className="flex items-start gap-3">
+              <Mail size={18} className="text-brand-gold shrink-0 mt-0.5" aria-hidden="true" />
+              <div>
+                <span className="block text-white/50 text-xs uppercase tracking-widest2 mb-1">Email</span>
+                <a href="mailto:direction.vezobeach@telma.net" className="hover:text-gold-500 transition-colors break-all">direction.vezobeach@telma.net</a>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Mail size={18} className="text-brand-gold shrink-0 mt-0.5" aria-hidden="true" />
+              <div>
+                <span className="block text-white/50 text-xs uppercase tracking-widest2 mb-1">Email</span>
+                <a href="mailto:resa.vezobeach@telma.net" className="hover:text-gold-500 transition-colors break-all">resa.vezobeach@telma.net</a>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Newsletter */}

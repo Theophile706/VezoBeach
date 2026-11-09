@@ -20,7 +20,7 @@ export default function RoomCard({ category }: RoomCardProps) {
             src={category.image}
             alt={name}
             loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            className="w-full h-full object-contain"
           />
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center gap-2 border border-dashed border-gray-300 text-gray-400">

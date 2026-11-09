@@ -53,7 +53,7 @@ export default function ImageGallery({ images, columns = 3 }: ImageGalleryProps)
               src={resolveImageUrl(img.src)}
               alt={img.alt}
               loading="lazy"
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full object-contain"
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
           </button>

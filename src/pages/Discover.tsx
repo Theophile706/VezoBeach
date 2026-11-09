@@ -48,7 +48,7 @@ export default function Discover() {
                     {activity.image && (
                       <div className="sm:w-1/3 aspect-[4/3] sm:aspect-auto overflow-hidden">
                         <img src={resolveImageUrl(activity.image)} alt={title(activity)}
-                          className="w-full h-full object-cover" loading="lazy" />
+                          className="w-full h-full object-contain bg-cream" loading="lazy" />
                       </div>
                     )}
                     <div className="p-6 flex-1">
