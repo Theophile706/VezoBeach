@@ -155,7 +155,7 @@ async function withFallback<T>(
   return response
 }
 
-const REQUESTS_API_URL = import.meta.env.VITE_REQUESTS_API_URL || 'http://localhost:4100'
+const REQUESTS_API_URL = import.meta.env.VITE_REQUESTS_API_URL || ''
 
 /** Envoie une demande de formulaire par e-mail. Lève une erreur si le serveur ne confirme pas l'envoi. */
 export async function sendRequest(type: 'contact' | 'reservation' | 'event', data: object): Promise<void> {

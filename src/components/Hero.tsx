@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion, useReducedMotion } from 'framer-motion'
 import BookingBar from './BookingBar'
@@ -18,6 +19,11 @@ import BookingBar from './BookingBar'
 export default function Hero() {
   const { t } = useTranslation()
   const reduceMotion = useReducedMotion()
+  const heroImageRef = useRef<HTMLImageElement>(null)
+
+  useEffect(() => {
+    if (heroImageRef.current) heroImageRef.current.fetchPriority = 'high'
+  }, [])
 
   return (
     // Hauteur du bloc hero réduite (h-[75vh] au lieu de h-[85vh]) pour remonter
@@ -28,20 +34,20 @@ export default function Hero() {
       <div className="absolute inset-0 overflow-hidden">
         {/*
           Cette image est le plus gros élément du premier affichage : c'est elle
-          qui décide de la vitesse perçue du site. `fetchPriority="high"` la fait
-          passer devant le reste dans la file du navigateur, `width`/`height`
+          qui décide de la vitesse perçue du site. La priorité haute est posée sur
+          l'élément DOM (React 18 ne connaît pas la prop), `width`/`height`
           réservent sa place pour que la page ne saute pas quand elle arrive, et
           `loading="eager"` interdit tout report. Un `<link rel="preload">` dans
           index.html la lance avant même que React ne démarre.
         */}
         <motion.img
+          ref={heroImageRef}
           src="/images/hero/hero-building.jpg"
           alt="Le Vezo Beach Morondava — façade de l'hôtel"
           data-loupe
           width={1382}
           height={745}
           loading="eager"
-          fetchPriority="high"
           decoding="async"
           className="w-full h-full object-cover"
           initial={reduceMotion ? false : { opacity: 0, scale: 1.08 }}
