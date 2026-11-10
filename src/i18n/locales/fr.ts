@@ -47,7 +47,7 @@ const fr = {
     servicesTitle: 'Une expérience 5 étoiles à chaque instant',
     service1Title: 'Chambres & Suites',
     service1Text: "Des espaces spacieux et raffinés, pensés pour votre confort absolu.",
-    service2Title: 'Restaurant Gastronomique',
+    service2Title: 'Restaurant',
     service2Text: 'Saveurs authentiques malgaches et inspirations internationales.',
     service3Title: 'Piscine & Spa',
     service3Text: 'Un jardin luxuriant, une piscine et des soins pour se ressourcer.',
@@ -201,7 +201,7 @@ const fr = {
   },
   restaurant: {
     heroTitle: 'Restaurant',
-    heroSubtitle: 'Une expérience gastronomique unique',
+    heroSubtitle: 'Une expérience unique',
     sectionEyebrow: 'La restauration',
     sectionTitle: 'Saveurs authentiques et moments conviviaux à Morondava',
     sectionText:

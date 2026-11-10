@@ -201,7 +201,7 @@ const en = {
   },
   restaurant: {
     heroTitle: 'Restaurant',
-    heroSubtitle: 'A unique gastronomic experience',
+    heroSubtitle: 'A unique experience',
     sectionEyebrow: 'Dining',
     sectionTitle: 'Authentic flavours and convivial moments in Morondava',
     sectionText:
