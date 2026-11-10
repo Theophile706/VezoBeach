@@ -5,6 +5,7 @@ import { WifiOff } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ImageLoupe from '@/components/ImageLoupe'
+import Seo from '@/components/Seo'
 import Home from '@/pages/Home'
 import Rooms from '@/pages/Rooms'
 import Restaurant from '@/pages/Restaurant'
@@ -72,6 +73,7 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
+      <Seo />
       <OfflineNotice />
       {!adminArea && <Header />}
       {!adminArea && <ImageLoupe />}

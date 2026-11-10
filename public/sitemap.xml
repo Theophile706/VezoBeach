@@ -3,42 +3,42 @@
   Les pages publiques du site. Le back-office (/admin) en est volontairement
   absent, et robots.txt l'exclut explicitement.
 
-  Si le domaine change, remplacer www.royalpalaceantsirabe.com partout ici,
+  Si le domaine change, remplacer l'URL du site partout ici,
   dans robots.txt et dans VITE_SITE_URL.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.royalpalaceantsirabe.com/</loc>
+    <loc>https://hotel-vezo-beach-morondava.vercel.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.royalpalaceantsirabe.com/chambres-suites</loc>
+    <loc>https://hotel-vezo-beach-morondava.vercel.app/chambres-suites</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.royalpalaceantsirabe.com/restaurant</loc>
+    <loc>https://hotel-vezo-beach-morondava.vercel.app/restaurant</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.royalpalaceantsirabe.com/piscine-bien-etre</loc>
+    <loc>https://hotel-vezo-beach-morondava.vercel.app/piscine-bien-etre</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.royalpalaceantsirabe.com/reunions-evenements</loc>
+    <loc>https://hotel-vezo-beach-morondava.vercel.app/reunions-evenements</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.royalpalaceantsirabe.com/decouvrir-morondava</loc>
+    <loc>https://hotel-vezo-beach-morondava.vercel.app/decouvrir-morondava</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.royalpalaceantsirabe.com/contact</loc>
+    <loc>https://hotel-vezo-beach-morondava.vercel.app/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
