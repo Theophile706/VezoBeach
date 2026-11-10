@@ -73,6 +73,7 @@ export default function Hero() {
         >
           <h1 className="font-serif text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wide">
             {t('hero.title')}
+            <span className="sr-only"> {t('hero.subtitle')}</span>
           </h1>
           <div className="flex items-center justify-center gap-4 mt-3">
             <span className="h-px w-10 bg-gold-500" />

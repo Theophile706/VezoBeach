@@ -26,8 +26,13 @@ export default function Seo() {
   const { pathname } = useLocation()
 
   useEffect(() => {
+    if (pathname.startsWith('/admin')) {
+      document.title = 'Administration | Le Vezo Beach'
+      return
+    }
+
     const seo = seoByPath[pathname] ?? defaultSeo
-    const url = `${window.location.origin}${pathname}`
+    const url = `${window.location.origin}${seo.canonicalPath ?? pathname}`
 
     document.title = seo.title
     upsertMeta('name', 'description', seo.description)

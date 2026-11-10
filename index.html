@@ -8,19 +8,19 @@
   <title>Hôtel à Morondava | Le Vezo Beach – Chambres, Restaurant & Spa</title>
 
   <meta name="description"
-    content="Le Vezo Beach, hôtel de charme à Morondava sur la côte ouest de Madagascar : chambres et suites, restaurant, piscine, spa et salles de réunion." />
+    content="Le Vezo Beach, hôtel de charme en bord de mer à Morondava, sur la côte ouest de Madagascar : chambres et suites, restaurant, piscine, spa et salles de réunion." />
 
   <!-- URL du site -->
-  <link rel="canonical" href="/" />
+  <link rel="canonical" href="https://hotel-vezo-beach-morondava.vercel.app/" />
 
   <!-- Open Graph : partage sur les réseaux sociaux -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Le Vezo Beach Morondava" />
-  <meta property="og:url" content="/" />
+  <meta property="og:url" content="https://hotel-vezo-beach-morondava.vercel.app/" />
   <meta property="og:title" content="Hôtel à Morondava | Le Vezo Beach – Chambres, Restaurant & Spa" />
   <meta property="og:description"
     content="Le Vezo Beach, hôtel de charme à Morondava, Madagascar : chambres et suites, restaurant, spa et piscine." />
-  <meta property="og:image" content="/images/hero/hero-building.jpg" />
+  <meta property="og:image" content="https://hotel-vezo-beach-morondava.vercel.app/images/hero/hero-building.jpg" />
   <meta property="og:image:width" content="1382" />
   <meta property="og:image:height" content="745" />
   <meta property="og:image:alt" content="Façade du Vezo Beach au crépuscule" />
@@ -29,6 +29,10 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hôtel à Morondava | Le Vezo Beach – Chambres, Restaurant & Spa" />
+  <meta name="twitter:description"
+    content="Le Vezo Beach, hôtel de charme à Morondava, Madagascar : chambres et suites, restaurant, spa et piscine." />
+  <meta name="twitter:image" content="https://hotel-vezo-beach-morondava.vercel.app/images/hero/hero-building.jpg" />
 
   <!-- Couleur du navigateur -->
   <meta name="theme-color" content="#292059" />
@@ -56,9 +60,12 @@
       {
         "@context": "https://schema.org",
         "@type": "Hotel",
+        "@id": "https://hotel-vezo-beach-morondava.vercel.app/#hotel",
         "name": "Le Vezo Beach",
-        "url": "/",
-        "image": "/images/hero/hero-building.jpg",
+        "alternateName": "Le Vezo Beach Morondava",
+        "url": "https://hotel-vezo-beach-morondava.vercel.app/",
+        "image": "https://hotel-vezo-beach-morondava.vercel.app/images/hero/hero-building.jpg",
+        "containsPlace": [{ "@id": "https://hotel-vezo-beach-morondava.vercel.app/restaurant#restaurant" }],
         "description": "Hôtel de charme à Morondava, Madagascar : chambres et suites, restaurant, spa, piscine et salles d'événements.",
         "telephone": "+261344904040",
         "email": "vezobeach@gmail.com",
@@ -94,6 +101,25 @@
             "value": true
           }
         ]
+      }
+    </script>
+
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "@id": "https://hotel-vezo-beach-morondava.vercel.app/restaurant#restaurant",
+        "name": "Restaurant Le Vezo Beach",
+        "url": "https://hotel-vezo-beach-morondava.vercel.app/restaurant",
+        "image": "https://hotel-vezo-beach-morondava.vercel.app/images/restaurant/restaurant-1.jpg",
+        "servesCuisine": ["Malgache", "Internationale"],
+        "containedInPlace": { "@id": "https://hotel-vezo-beach-morondava.vercel.app/#hotel" },
+        "telephone": "+261344904040",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Morondava",
+          "addressCountry": "MG"
+        }
       }
     </script>
 </head>
