@@ -359,7 +359,7 @@ const en = {
     errorMessage: 'An error occurred. Please try again or contact us directly by phone.',
     infoTitle: 'Our Details',
     addressLabel: 'Address',
-    address: 'Morondava, Madagascar',
+    address: 'Plage de Nosy Kely, Morondava, Madagascar',
     phoneInfoLabel: 'Phone',
     emailInfoLabel: 'Email',
     mapTitle: 'Find Us',
@@ -375,7 +375,7 @@ const en = {
     newsletterPlaceholder: 'Your email address',
     newsletterButton: 'Subscribe',
     rights: 'All rights reserved.',
-    address: 'Morondava, Madagascar',
+    address: 'Plage de Nosy Kely, Morondava, Madagascar',
   },
   booking: {
     title: 'Booking',

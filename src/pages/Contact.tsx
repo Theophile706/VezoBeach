@@ -53,16 +53,18 @@ export default function Contact() {
               <Phone size={18} className="text-brand-gold mt-0.5 shrink-0" />
               <div>
                 <div className="font-medium text-charcoal">{t('contact.phoneInfoLabel')}</div>
-                <a href="tel:+261344904040" className="text-gray-600 hover:text-gold-600 block">+261 34 49 040 40</a>
-                <a href="tel:+261204449040" className="text-gray-600 hover:text-gold-600 block">+261 20 44 490 40</a>
+                <a href="tel:+261320534040" className="text-gray-600 hover:text-gold-600 block">+261 32 05 340 40</a>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Mail size={18} className="text-brand-gold mt-0.5 shrink-0" />
               <div>
                 <div className="font-medium text-charcoal">{t('contact.emailInfoLabel')}</div>
-                <a href="mailto:vezobeach@gmail.com" className="text-gray-600 hover:text-gold-600 block">
-                  vezobeach@gmail.com
+                <a href="mailto:direction.vezobeach@telma.net" className="text-gray-600 hover:text-gold-600 block">
+                  direction.vezobeach@telma.net
+                </a>
+                <a href="mailto:resa.vezobeach@telma.net" className="text-gray-600 hover:text-gold-600 block">
+                  resa.vezobeach@telma.net
                 </a>
               </div>
             </div>
@@ -72,7 +74,7 @@ export default function Contact() {
             <h3 className="font-serif text-xl mb-4">{t('contact.socialTitle')}</h3>
             <div className="flex items-center gap-4">
               <a
-                href="https://www.facebook.com/hotelroyalpalaceantsirabe"
+                href="https://www.facebook.com/hotelvezobeachmorondava?mibextid=rS40aB7S9Ucbxw6v"
                 target="_blank"
                 rel="noreferrer"
                 className="w-10 h-10 rounded-full bg-cream flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-white transition-colors"
@@ -81,7 +83,7 @@ export default function Contact() {
                 <Facebook size={18} />
               </a>
               <a
-                href="https://www.instagram.com/hotelroyalpalace_antsirabe/"
+                href="https://www.instagram.com/hotelvezobeach_morondava?dlrf=MWQwcHJuM3V1MnhhMQ=="
                 target="_blank"
                 rel="noreferrer"
                 className="w-10 h-10 rounded-full bg-cream flex items-center justify-center text-brand-gold hover:bg-brand-gold hover:text-white transition-colors"

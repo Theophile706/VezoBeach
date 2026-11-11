@@ -32,10 +32,10 @@ export default function Footer() {
           <div className="font-serif text-xl text-white tracking-wider mb-4">Le Vezo Beach</div>
           <p className="text-sm leading-relaxed">{t('footer.aboutText')}</p>
           <div className="flex items-center gap-4 mt-5">
-            <a href="https://www.facebook.com/hotelroyalpalaceantsirabe" target="_blank" rel="noreferrer" aria-label="Facebook" className="text-brand-gold hover:text-white transition-colors">
+            <a href="https://www.facebook.com/hotelvezobeachmorondava?mibextid=rS40aB7S9Ucbxw6v" target="_blank" rel="noreferrer" aria-label="Facebook" className="text-brand-gold hover:text-white transition-colors">
               <Facebook size={20} />
             </a>
-            <a href="https://www.instagram.com/hotelroyalpalace_antsirabe/" target="_blank" rel="noreferrer" aria-label="Instagram" className="text-brand-gold hover:text-white transition-colors">
+            <a href="https://www.instagram.com/hotelvezobeach_morondava?dlrf=MWQwcHJuM3V1MnhhMQ==" target="_blank" rel="noreferrer" aria-label="Instagram" className="text-brand-gold hover:text-white transition-colors">
               <Instagram size={20} />
             </a>
           </div>
@@ -56,28 +56,28 @@ export default function Footer() {
 
         {/* Contact */}
         <div>
-          <div className="text-white uppercase tracking-widest2 text-xs mb-5 font-medium">{t('footer.contactTitle')}</div>
+          <div className="font-serif text-xl text-white mb-5">{t('contact.infoTitle')}</div>
           <div className="text-sm space-y-4 leading-relaxed">
             <div className="flex items-start gap-3">
               <MapPin size={18} className="text-brand-gold shrink-0 mt-0.5" aria-hidden="true" />
-              <p>Plage de Nosy Kely, Morondava, Madagascar</p>
+              <div>
+                <span className="block text-white/50 text-xs uppercase tracking-widest2 mb-1">{t('contact.addressLabel')}</span>
+                <p>{t('contact.address')}</p>
+              </div>
             </div>
             <div className="flex items-start gap-3">
               <Phone size={18} className="text-brand-gold shrink-0 mt-0.5" aria-hidden="true" />
-              <a href="tel:+261320534040" className="hover:text-gold-500 transition-colors">+261 32 05 340 40</a>
-            </div>
-            <div className="flex items-start gap-3">
-              <Mail size={18} className="text-brand-gold shrink-0 mt-0.5" aria-hidden="true" />
               <div>
-                <span className="block text-white/50 text-xs uppercase tracking-widest2 mb-1">Email</span>
-                <a href="mailto:direction.vezobeach@telma.net" className="hover:text-gold-500 transition-colors break-all">direction.vezobeach@telma.net</a>
+                <span className="block text-white/50 text-xs uppercase tracking-widest2 mb-1">{t('contact.phoneInfoLabel')}</span>
+                <a href="tel:+261320534040" className="block hover:text-gold-500 transition-colors">+261 32 05 340 40</a>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Mail size={18} className="text-brand-gold shrink-0 mt-0.5" aria-hidden="true" />
               <div>
-                <span className="block text-white/50 text-xs uppercase tracking-widest2 mb-1">Email</span>
-                <a href="mailto:resa.vezobeach@telma.net" className="hover:text-gold-500 transition-colors break-all">resa.vezobeach@telma.net</a>
+                <span className="block text-white/50 text-xs uppercase tracking-widest2 mb-1">{t('contact.emailInfoLabel')}</span>
+                <a href="mailto:direction.vezobeach@telma.net" className="block hover:text-gold-500 transition-colors break-all">direction.vezobeach@telma.net</a>
+                <a href="mailto:resa.vezobeach@telma.net" className="block hover:text-gold-500 transition-colors break-all">resa.vezobeach@telma.net</a>
               </div>
             </div>
           </div>
