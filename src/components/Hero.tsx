@@ -1,7 +1,10 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { motion, useReducedMotion } from 'framer-motion'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import BookingBar from './BookingBar'
+
+const HERO_IMAGES = ['/images/hero/hero-building.jpg', '/images/hero/hero2.jpg']
+const HERO_PAUSE_MS = 2000
 
 /**
  * Hero
@@ -20,10 +23,18 @@ export default function Hero() {
   const { t } = useTranslation()
   const reduceMotion = useReducedMotion()
   const heroImageRef = useRef<HTMLImageElement>(null)
+  const [heroIndex, setHeroIndex] = useState(0)
 
   useEffect(() => {
     if (heroImageRef.current) heroImageRef.current.fetchPriority = 'high'
   }, [])
+
+  const scheduleNextSlide = (index: number) => {
+    if (reduceMotion) return
+    window.setTimeout(() => {
+      setHeroIndex((current) => (current === index ? (index + 1) % HERO_IMAGES.length : current))
+    }, HERO_PAUSE_MS)
+  }
 
   return (
     // Hauteur du bloc hero réduite (h-[75vh] au lieu de h-[85vh]) pour remonter
@@ -40,27 +51,32 @@ export default function Hero() {
           `loading="eager"` interdit tout report. Un `<link rel="preload">` dans
           index.html la lance avant même que React ne démarre.
         */}
-        <motion.img
-          ref={heroImageRef}
-          src="/images/hero/hero-building.jpg"
-          alt="Le Vezo Beach Morondava — façade de l'hôtel"
-          data-loupe
-          width={1382}
-          height={745}
-          loading="eager"
-          decoding="async"
-          className="w-full h-full object-cover"
-          initial={reduceMotion ? false : { opacity: 0, scale: 1.08 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={
-            reduceMotion
-              ? { duration: 0 }
-              : {
-                  opacity: { duration: 2.4, ease: [0.22, 1, 0.36, 1] },
-                  scale: { duration: 12, ease: [0.25, 0.1, 0.25, 1] },
-                }
-          }
-        />
+        <AnimatePresence>
+          <motion.img
+            key={heroIndex}
+            ref={heroIndex === 0 ? heroImageRef : undefined}
+            src={HERO_IMAGES[heroIndex]}
+            alt="Le Vezo Beach Morondava — façade de l'hôtel"
+            data-loupe
+            width={1382}
+            height={745}
+            loading="eager"
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={reduceMotion ? false : { opacity: 0, scale: 1.08 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 1, transition: { duration: 2.4, ease: [0.22, 1, 0.36, 1] } }}
+            onAnimationComplete={() => scheduleNextSlide(heroIndex)}
+            transition={
+              reduceMotion
+                ? { duration: 0 }
+                : {
+                    opacity: { duration: 2.4, ease: [0.22, 1, 0.36, 1] },
+                    scale: { duration: 12, ease: [0.25, 0.1, 0.25, 1] },
+                  }
+            }
+          />
+        </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/50" />
       </div>
 
