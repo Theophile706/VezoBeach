@@ -15,7 +15,7 @@ export default function Spa() {
 
   return (
     <>
-      <PageHero image="/images/Photo-Bien-etre-1200.jpg" title={t('spa.heroTitle')} subtitle={t('spa.heroSubtitle')} loupe />
+      <PageHero image="/images/Photo-Bien-etre-1200.jpg" title={t('spa.heroTitle')} slideTitle="serif" loupe />
 
       {/* Pool section */}
       <AnimatedSection className="container-luxe py-20 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

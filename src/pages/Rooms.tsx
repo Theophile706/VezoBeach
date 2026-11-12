@@ -14,7 +14,7 @@ export default function Rooms() {
 
   return (
     <>
-      <PageHero image="/images/Photo-titre.jpg" title={t('rooms.heroTitle')} subtitle={t('rooms.heroSubtitle')} loupe />
+      <PageHero image="/images/Photo-titre.jpg" title={t('rooms.heroTitle')} slideTitle="serif" loupe />
 
       {/* Intro */}
       <AnimatedSection className="container-luxe py-20 md:py-24">
@@ -60,9 +60,10 @@ export default function Rooms() {
             href="/Fiche-technique.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-block bg-[#f0c419] px-6 py-3 text-xs font-medium uppercase tracking-widest text-black shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-[#d9b015] hover:shadow-lg active:translate-y-0 active:shadow-sm"
+            className="group relative mt-6 inline-block bg-[#f0c419] px-6 py-3 text-xs font-medium uppercase tracking-widest text-black shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-[#d9b015] hover:shadow-lg active:translate-y-0 active:shadow-sm"
           >
-            {t('rooms.technicalSheetButton')}
+            <span className="pointer-events-none absolute inset-0 animate-ping bg-[#f0c419] opacity-40" aria-hidden="true" />
+            <span className="relative">{t('rooms.technicalSheetButton')}</span>
           </a>
         </div>
       </section>

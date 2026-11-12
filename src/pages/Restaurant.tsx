@@ -28,7 +28,7 @@ export default function Restaurant() {
 
   return (
     <>
-      <PageHero image="/images/Photo-Bar-et-Restaurants-1200.jpg" title={t('restaurant.heroTitle')} subtitle={t('restaurant.heroSubtitle')} loupe />
+      <PageHero image="/images/Photo-Bar-et-Restaurants-1200.jpg" title={t('restaurant.heroTitle')} slideTitle="serif" loupe />
 
       {/* Section intro */}
       <AnimatedSection className="container-luxe py-20 md:py-24">
