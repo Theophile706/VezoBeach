@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { resolveImageUrl } from '@/utils/api'
 import type { GalleryImage } from '@/types'
+import { isMobileViewport } from '@/utils/isMobileViewport'
 
 interface ImageGalleryProps {
   images: GalleryImage[]
@@ -38,6 +39,7 @@ export default function ImageGallery({
   const english = i18n.resolvedLanguage?.startsWith('en')
   const altOf = (img: GalleryImage) => (english ? img.altEn || img.alt : img.alt)
 
+  const isMobile = isMobileViewport()
   const close = useCallback(() => setActiveIndex(null), [])
   const next = useCallback(() => setActiveIndex((i) => (i === null ? null : (i + 1) % images.length)), [images.length])
   const prev = useCallback(
@@ -64,7 +66,9 @@ export default function ImageGallery({
       <div className={`grid ${gridCols} gap-3 md:gap-4`}>
         {images.map((img, idx) => {
           const offset = ENTRANCE_OFFSETS[idx % ENTRANCE_OFFSETS.length]
-          const entranceProps = entrance
+          const entranceProps = isMobile
+            ? {}
+            : entrance
             ? {
                 initial: { opacity: 0, x: offset.x, y: offset.y },
                 whileInView: { opacity: 1, x: 0, y: 0 },

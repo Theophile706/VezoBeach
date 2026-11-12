@@ -7,6 +7,7 @@ import AnimatedSection from '@/components/AnimatedSection'
 import SectionHeading from '@/components/SectionHeading'
 import ImageGallery from '@/components/ImageGallery'
 import { useGalleryImages } from '@/hooks/useGallery'
+import { isMobileViewport } from '@/utils/isMobileViewport'
 
 const services = [
   { key: 'service1', icon: BedDouble, image: '/images/Photo-chambre.jpg', link: '/chambres-suites' },
@@ -135,8 +136,8 @@ export default function Home() {
             src="/images/Photo-Gallerie-2-1200.jpg"
             alt=""
             className="w-full h-full object-cover"
-            initial={{ opacity: 0, scale: 1.12 }}
-            whileInView={{ opacity: 1 }}
+            initial={isMobileViewport() ? false : { opacity: 0, scale: 1.12 }}
+            whileInView={isMobileViewport() ? undefined : { opacity: 1 }}
             animate={{ scale: [1.12, 1.04] }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{
