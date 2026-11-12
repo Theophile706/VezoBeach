@@ -65,7 +65,14 @@ export default function Hero() {
             className="absolute inset-0 w-full h-full object-cover"
             initial={reduceMotion ? false : { opacity: 0, scale: 1.08 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 1, transition: { duration: 2.4, ease: [0.22, 1, 0.36, 1] } }}
+            exit={{
+              opacity: 1,
+              scale: 0.96,
+              transition: {
+                opacity: { duration: 3.2, ease: [0.45, 0, 0.55, 1] },
+                scale: { duration: 3.2, ease: [0.45, 0, 0.55, 1] },
+              },
+            }}
             onAnimationComplete={() => scheduleNextSlide(heroIndex)}
             transition={
               reduceMotion
