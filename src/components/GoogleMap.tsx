@@ -12,12 +12,12 @@ interface GoogleMapProps {
  * `src` with your own Maps Embed API URL.
  */
 export default function GoogleMap({ className = '', height = '420px' }: GoogleMapProps) {
-  const query = encodeURIComponent('Plage de Nosy Kely, Morondava, Madagascar')
+  const query = encodeURIComponent('P749+7W Morondava')
 
   return (
     <div className={className} style={{ height }}>
       <iframe
-        title="Plage de Nosy Kely, Morondava, Madagascar — Localisation"
+        title="Le Vezo Beach, Morondava — Localisation"
         src={`https://maps.google.com/maps?q=${query}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
         width="100%"
         height="100%"

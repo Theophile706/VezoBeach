@@ -86,8 +86,8 @@ export const menuSections: MenuSection[] = [
         id: 'd1',
         name: 'Assiette de fruits tropicaux',
         nameEn: 'Tropical fruit plate',
-        description: "Fruits frais du jardin de l'hôtel",
-        descriptionEn: "Fresh fruits from the hotel's garden",
+        description: 'Fruits frais',
+        descriptionEn: 'Fresh fruit',
         price: 9000,
       },
       {

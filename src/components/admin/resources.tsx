@@ -154,34 +154,6 @@ export const resources: Record<string, ResourceSpec> = {
     ],
   },
 
-  spa: {
-    endpoint: '/admin/spa',
-    title: 'Soins du spa',
-    addLabel: 'Ajouter un soin',
-    fields: [
-      { key: 'name', label: 'Nom du soin (FR)' },
-      { key: 'nameEn', label: 'Nom du soin (EN)', translateFrom: 'name' },
-      { key: 'duration', label: 'Durée (FR)', optional: true, nullWhenEmpty: true, help: 'ex. 60 minutes' },
-      { key: 'durationEn', label: 'Durée (EN)', optional: true, nullWhenEmpty: true, translateFrom: 'duration' },
-      { key: 'description', label: 'Description (FR)', type: 'textarea', optional: true, nullWhenEmpty: true },
-      {
-        key: 'descriptionEn', label: 'Description (EN)', type: 'textarea',
-        optional: true, nullWhenEmpty: true, translateFrom: 'description',
-      },
-      { key: 'price', label: 'Prix (Ar)', type: 'number' },
-      { key: 'key', label: 'Clé de traduction', optional: true },
-      { key: 'sortOrder', label: 'Ordre d’affichage', type: 'number' },
-      { key: 'isActive', label: 'Visible sur le site', type: 'checkbox' },
-    ],
-    defaults: { isActive: 'true' },
-    columns: [
-      { label: 'Soin', value: (row) => row.name || row.key },
-      { label: 'Durée', value: (row) => row.duration || '—' },
-      { label: 'Prix', value: (row) => row.price },
-      { label: 'Visible', value: (row) => (row.isActive ? 'Oui' : 'Non') },
-    ],
-  },
-
   gallery: {
     endpoint: '/admin/gallery',
     title: 'Galerie photo',

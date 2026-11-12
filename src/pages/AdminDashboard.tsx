@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
-  BedDouble, CalendarCheck2, Flower2, Images, LayoutDashboard, LogOut, Mail, MapPinned,
+  BedDouble, CalendarCheck2, Images, LayoutDashboard, LogOut, Mail, MapPinned,
   CalendarRange, Menu as MenuIcon, Sunrise, ScrollText, Send, ShieldCheck, UserCircle, UsersRound,
   Utensils, X,
 } from 'lucide-react'
@@ -19,7 +19,7 @@ import { AccountPanel, AuditPanel } from '@/components/admin/AccountPanel'
 
 type Section =
   | 'overview' | 'day' | 'bookings' | 'availability' | 'room-blocks' | 'contact-messages' | 'subscribers'
-  | 'rooms' | 'menu-sections' | 'menu-items' | 'event-rooms' | 'spa' | 'gallery' | 'discover'
+  | 'rooms' | 'menu-sections' | 'menu-items' | 'event-rooms' | 'gallery' | 'discover'
   | 'users' | 'audit' | 'account'
 
 interface NavItem {
@@ -49,7 +49,7 @@ const NAV_GROUPS: Array<{ title: string; items: NavItem[] }> = [
       { key: 'rooms', label: 'Chambres', icon: BedDouble },
       { key: 'menu-sections', label: 'Carte — sections', icon: Utensils },
       { key: 'menu-items', label: 'Carte — plats', icon: Utensils },
-      { key: 'spa', label: 'Spa', icon: Flower2 },
+
       { key: 'event-rooms', label: 'Salles de réunion', icon: UsersRound },
       { key: 'gallery', label: 'Galerie photo', icon: Images },
       { key: 'discover', label: 'Découvrir', icon: MapPinned },
@@ -77,7 +77,7 @@ const TITLES: Record<Section, string> = {
   'menu-sections': 'Carte — sections',
   'menu-items': 'Carte — plats et boissons',
   'event-rooms': 'Salles de réunion',
-  spa: 'Soins du spa',
+
   gallery: 'Galerie photo',
   discover: 'Page « Découvrir »',
   users: 'Comptes d’administration',

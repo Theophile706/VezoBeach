@@ -21,9 +21,9 @@ const highlights = [
 ]
 
 const sisterHotels = [
-  { key: 'sister1', image: '/images/3.jpg' },
-  { key: 'sister2', image: '/images/WhatsApp%20Image%202026-11-02%20at%2011.45.41.jpeg' },
-  { key: 'sister3', image: '/images/images.jpg' },
+  { key: 'sister1', image: '/images/3.jpg', url: undefined },
+  { key: 'sister2', image: '/images/WhatsApp%20Image%202026-11-02%20at%2011.45.41.jpeg', url: undefined },
+  { key: 'sister3', image: '/images/images.jpg', url: 'https://hotel-vezobeach.com/' },
 ]
 
 export default function Home() {
@@ -93,24 +93,6 @@ export default function Home() {
         </div>
       </AnimatedSection>
 
-      {/* Special offers */}
-      <section className="relative py-20 md:py-28 bg-charcoal">
-        <div className="container-luxe">
-          <SectionHeading eyebrow={t('home.offersEyebrow')} title={t('home.offersTitle')} light />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
-            {['offer1', 'offer2', 'offer3'].map((key, idx) => (
-              <AnimatedSection key={key} delay={idx * 0.1} className="border border-white/15 hover:border-gold-500/60 transition-colors p-8 rounded-md">
-                <div className="text-gold-500 text-3xl font-serif mb-4">0{idx + 1}</div>
-                <h3 className="font-serif text-xl text-white mb-3">{t(`home.${key}Title`)}</h3>
-                <p className="text-white/70 text-sm leading-relaxed mb-6">{t(`home.${key}Text`)}</p>
-                <Link to="/contact#booking" className="text-gold-500 text-xs uppercase tracking-widest2 hover:text-gold-400">
-                  {t('common.discoverMore')} →
-                </Link>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Gallery */}
       <AnimatedSection className="container-luxe py-20 md:py-28">
@@ -131,7 +113,11 @@ export default function Home() {
                   <img src={h.image} alt={t(`home.${h.key}Name`)} className="w-full h-full object-cover bg-cream" loading="lazy" />
                 </div>
                 <div className="p-6">
-                  <h3 className="font-serif text-lg mb-1">{t(`home.${h.key}Name`)}</h3>
+                  <h3 className="font-serif text-lg mb-1">
+                    {h.url ? (
+                      <a href={h.url} target="_blank" rel="noreferrer" className="hover:text-gold-600 transition-colors">{t(`home.${h.key}Name`)}</a>
+                    ) : t(`home.${h.key}Name`)}
+                  </h3>
                   <div className="text-gold-600 text-xs uppercase tracking-widest2 mb-3">{t(`home.${h.key}Location`)}</div>
                   <p className="text-sm text-gray-600">{t(`home.${h.key}Text`)}</p>
                 </div>

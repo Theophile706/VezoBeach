@@ -69,13 +69,15 @@ export default function Footer() {
               <Phone size={18} className="text-brand-gold shrink-0 mt-0.5" aria-hidden="true" />
               <div>
                 <span className="block text-white/50 text-xs uppercase tracking-widest2 mb-1">{t('contact.phoneInfoLabel')}</span>
-                <a href="tel:+261320534040" className="block hover:text-gold-500 transition-colors">+261 32 05 340 40</a>
+                <a href="tel:+261320434040" className="block hover:text-gold-500 transition-colors">+261 32 04 340 40</a>
+                <a href="tel:+261349934640" className="block hover:text-gold-500 transition-colors">+261 34 99 346 40</a>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Mail size={18} className="text-brand-gold shrink-0 mt-0.5" aria-hidden="true" />
               <div>
                 <span className="block text-white/50 text-xs uppercase tracking-widest2 mb-1">{t('contact.emailInfoLabel')}</span>
+                <a href="mailto:vezobeach@gmail.com" className="block hover:text-gold-500 transition-colors break-all">vezobeach@gmail.com</a>
                 <a href="mailto:direction.vezobeach@telma.net" className="block hover:text-gold-500 transition-colors break-all">direction.vezobeach@telma.net</a>
                 <a href="mailto:resa.vezobeach@telma.net" className="block hover:text-gold-500 transition-colors break-all">resa.vezobeach@telma.net</a>
               </div>

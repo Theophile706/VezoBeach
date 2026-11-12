@@ -1,7 +1,4 @@
-import rooms from '@/data/rooms'
 import { menuSections } from '@/data/menu'
-import spaTreatments from '@/data/spa'
-import eventRooms from '@/data/events'
 import galleryImages from '@/data/gallery'
 import { activities, attractionKeys } from '@/data/discover'
 
@@ -169,10 +166,7 @@ export async function sendRequest(type: 'contact' | 'reservation' | 'event', dat
 
 export const api = {
   // Content (avec repli sur les données locales)
-  getRooms: () => withFallback(() => request<any[]>('/content/rooms'), rooms as any[]),
   getMenu: () => withFallback(() => request<any[]>('/content/menu'), menuSections as any[]),
-  getSpa: () => withFallback(() => request<any[]>('/content/spa'), spaTreatments as any[]),
-  getEvents: () => withFallback(() => request<any[]>('/content/events'), eventRooms as any[]),
   getGallery: () => withFallback(() => request<any[]>('/content/gallery'), galleryImages as any[]),
   getDiscover: () => withFallback(
     () => request<{ activities: any[]; attractions: any[] }>('/content/discover'),

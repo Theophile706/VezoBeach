@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { AnimatePresence, motion } from 'framer-motion'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { resolveImageUrl } from '@/utils/api'
@@ -18,6 +19,9 @@ interface ImageGalleryProps {
  */
 export default function ImageGallery({ images, columns = 3, fit = 'contain' }: ImageGalleryProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
+  const { i18n } = useTranslation()
+  const english = i18n.resolvedLanguage?.startsWith('en')
+  const altOf = (img: GalleryImage) => (english ? img.altEn || img.alt : img.alt)
 
   const close = useCallback(() => setActiveIndex(null), [])
   const next = useCallback(() => setActiveIndex((i) => (i === null ? null : (i + 1) % images.length)), [images.length])
@@ -52,7 +56,7 @@ export default function ImageGallery({ images, columns = 3, fit = 'contain' }: I
           >
             <img
               src={resolveImageUrl(img.src)}
-              alt={img.alt}
+              alt={altOf(img)}
               loading="lazy"
               className={`w-full h-full ${fit === 'cover' ? 'object-cover' : 'object-contain'}`}
             />
@@ -95,7 +99,7 @@ export default function ImageGallery({ images, columns = 3, fit = 'contain' }: I
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               src={resolveImageUrl(images[activeIndex].src)}
-              alt={images[activeIndex].alt}
+              alt={altOf(images[activeIndex])}
               className="max-h-[85vh] max-w-[90vw] object-contain rounded shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             />

@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { defaultSeo, seoByPath } from '@/data/seo'
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string) {
@@ -24,6 +25,8 @@ function upsertCanonical(href: string) {
 
 export default function Seo() {
   const { pathname } = useLocation()
+  const { i18n } = useTranslation()
+  const english = i18n.resolvedLanguage?.startsWith('en') ?? false
 
   useEffect(() => {
     if (pathname.startsWith('/admin')) {
@@ -33,14 +36,18 @@ export default function Seo() {
 
     const seo = seoByPath[pathname] ?? defaultSeo
     const url = `${window.location.origin}${seo.canonicalPath ?? pathname}`
+    const title = english ? seo.titleEn : seo.title
+    const description = english ? seo.descriptionEn : seo.description
 
-    document.title = seo.title
-    upsertMeta('name', 'description', seo.description)
-    upsertMeta('property', 'og:title', seo.title)
-    upsertMeta('property', 'og:description', seo.description)
+    document.documentElement.lang = english ? 'en' : 'fr'
+    document.title = title
+    upsertMeta('name', 'description', description)
+    upsertMeta('property', 'og:title', title)
+    upsertMeta('property', 'og:description', description)
     upsertMeta('property', 'og:url', url)
+    upsertMeta('property', 'og:locale', english ? 'en_GB' : 'fr_FR')
     upsertCanonical(url)
-  }, [pathname])
+  }, [pathname, english])
 
   return null
 }

@@ -53,13 +53,17 @@ export default function Contact() {
               <Phone size={18} className="text-brand-gold mt-0.5 shrink-0" />
               <div>
                 <div className="font-medium text-charcoal">{t('contact.phoneInfoLabel')}</div>
-                <a href="tel:+261320534040" className="text-gray-600 hover:text-gold-600 block">+261 32 05 340 40</a>
+                <a href="tel:+261320434040" className="text-gray-600 hover:text-gold-600 block">+261 32 04 340 40</a>
+                <a href="tel:+261349934640" className="text-gray-600 hover:text-gold-600 block">+261 34 99 346 40</a>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <Mail size={18} className="text-brand-gold mt-0.5 shrink-0" />
               <div>
                 <div className="font-medium text-charcoal">{t('contact.emailInfoLabel')}</div>
+                <a href="mailto:vezobeach@gmail.com" className="text-gray-600 hover:text-gold-600 block">
+                  vezobeach@gmail.com
+                </a>
                 <a href="mailto:direction.vezobeach@telma.net" className="text-gray-600 hover:text-gold-600 block">
                   direction.vezobeach@telma.net
                 </a>

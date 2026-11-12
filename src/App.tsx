@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { lazy, Suspense, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { WifiOff } from 'lucide-react'
 import Header from '@/components/Header'
@@ -14,15 +14,6 @@ import Events from '@/pages/Events'
 import Discover from '@/pages/Discover'
 import Contact from '@/pages/Contact'
 
-/**
- * Le back-office est chargé à la demande.
- *
- * Tableau de bord, formulaires et panneaux ne servent qu'aux quelques
- * personnes qui s'y connectent : les inclure dans le bundle principal ferait
- * payer leur poids à tous les visiteurs du site.
- */
-const AdminLogin = lazy(() => import('@/pages/AdminLogin'))
-const AdminDashboard = lazy(() => import('@/pages/AdminDashboard'))
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation()
@@ -67,42 +58,26 @@ function OfflineNotice() {
 }
 
 export default function App() {
-  const { pathname } = useLocation()
-  const adminArea = pathname.startsWith('/admin')
-
   return (
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
       <Seo />
       <OfflineNotice />
-      {!adminArea && <Header />}
-      {!adminArea && <ImageLoupe />}
-      {adminArea ? (
-        <Suspense fallback={
-          <main className="grid min-h-screen place-items-center text-gray-600">
-            Chargement de l’administration…
-          </main>
-        }>
-          <Routes>
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route path="/admin" element={<AdminDashboard />} />
-          </Routes>
-        </Suspense>
-      ) : (
-        <main className="flex-1">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/chambres-suites" element={<Rooms />} />
-            <Route path="/restaurant" element={<Restaurant />} />
-            <Route path="/piscine-bien-etre" element={<Spa />} />
-            <Route path="/reunions-evenements" element={<Events />} />
-            <Route path="/decouvrir-morondava" element={<Discover />} />
-            <Route path="/decouvrir-antsirabe" element={<Discover />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-      )}
-      {!adminArea && <Footer />}
+      <Header />
+      <ImageLoupe />
+      <main className="flex-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/chambres-suites" element={<Rooms />} />
+          <Route path="/restaurant" element={<Restaurant />} />
+          <Route path="/piscine-bien-etre" element={<Spa />} />
+          <Route path="/reunions-evenements" element={<Events />} />
+          <Route path="/decouvrir-morondava" element={<Discover />} />
+          <Route path="/decouvrir-antsirabe" element={<Discover />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+      <Footer />
     </div>
   )
 }

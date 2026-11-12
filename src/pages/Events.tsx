@@ -1,20 +1,16 @@
 import { useTranslation } from 'react-i18next'
-import { Users, CheckCircle2, AlertCircle } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { CheckCircle2, AlertCircle } from 'lucide-react'
+import { useState } from 'react'
 import PageHero from '@/components/PageHero'
 import AnimatedSection from '@/components/AnimatedSection'
 import SectionHeading from '@/components/SectionHeading'
-import { equipmentKeys } from '@/data/events'
-import type { EventFormData, EventRoom } from '@/types'
+import type { EventFormData } from '@/types'
 import { validateEmail } from '@/utils/helpers'
-import { api, resolveImageUrl, sendRequest } from '@/utils/api'
+import { sendRequest } from '@/utils/api'
 
 export default function Events() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const [status, setStatus] = useState<'idle' | 'sending' | 'success'>('idle')
-  const [eventRooms, setEventRooms] = useState<EventRoom[]>([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [form, setForm] = useState<EventFormData>({
     name: '',
@@ -25,44 +21,6 @@ export default function Events() {
     eventDate: '',
     guestCount: '',
   })
-  const english = i18n.resolvedLanguage?.startsWith('en')
-
-  useEffect(() => {
-    async function fetchEventRooms() {
-      const response = await api.getEvents()
-      if (response.error) {
-        setError(response.error)
-      } else if (response.data) {
-        setEventRooms(response.data)
-      }
-      setLoading(false)
-    }
-    fetchEventRooms()
-  }, [])
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading event rooms...</p>
-        </div>
-      </div>
-    )
-  }
-
-  if (error) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-center">
-          <p className="text-red-600 mb-4">Failed to load event rooms: {error}</p>
-          <button onClick={() => window.location.reload()} className="btn-gold">
-            Retry
-          </button>
-        </div>
-      </div>
-    )
-  }
 
   function update<K extends keyof EventFormData>(key: K, value: string) {
     setForm((p) => ({ ...p, [key]: value }))
@@ -73,25 +31,24 @@ export default function Events() {
     e.preventDefault()
     setSubmitError(null)
 
-    // Validation côté client
     if (!form.name.trim()) {
-      setSubmitError('Veuillez saisir votre nom.')
+      setSubmitError(t('events.errorName'))
       return
     }
     if (!validateEmail(form.email)) {
-      setSubmitError('Veuillez saisir une adresse email valide.')
+      setSubmitError(t('events.errorEmail'))
       return
     }
     if (!form.eventDate) {
-      setSubmitError("Veuillez choisir la date de l'événement.")
+      setSubmitError(t('events.errorDate'))
       return
     }
     if (!form.guestCount || Number(form.guestCount) < 1) {
-      setSubmitError("Veuillez indiquer le nombre de personnes.")
+      setSubmitError(t('events.errorGuests'))
       return
     }
     if (!form.message.trim()) {
-      setSubmitError('Veuillez décrire votre projet.')
+      setSubmitError(t('events.errorDescription'))
       return
     }
 
@@ -101,7 +58,7 @@ export default function Events() {
       setStatus('success')
     } catch (err) {
       console.error('[Le Vezo Beach] Event inquiry failed:', err)
-      setSubmitError("L'envoi a échoué. Vérifiez votre connexion et réessayez.")
+      setSubmitError(t('events.sendFailed'))
       setStatus('idle')
     }
   }
@@ -115,45 +72,6 @@ export default function Events() {
 
       <AnimatedSection className="container-luxe py-20 md:py-24">
         <SectionHeading title={t('events.introTitle')} text={t('events.introText')} />
-      </AnimatedSection>
-
-      <section className="bg-cream py-20 md:py-24">
-        <div className="container-luxe">
-          <SectionHeading title={t('events.roomsTitle')} />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
-            {eventRooms.length > 0 ? eventRooms.map((room, idx) => (
-              <AnimatedSection key={room.id} delay={idx * 0.1} className="bg-white rounded-md overflow-hidden shadow-card">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={resolveImageUrl(room.image)} alt={(english ? room.nameEn : room.name) || t(`events.${room.key}Name`)} className="w-full h-full object-cover bg-cream" loading="lazy" />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-serif text-lg mb-2">{(english ? room.nameEn : room.name) || t(`events.${room.key}Name`)}</h3>
-                  <div className="flex items-center gap-2 text-sm text-gold-600 mb-2">
-                    <Users size={16} /> {room.capacity ?? t(`events.${room.key}Capacity`)}
-                  </div>
-                  <p className="text-sm text-gray-600">
-                    {(english ? room.descriptionEn : room.description) || t(`events.${room.key}Style`)}
-                  </p>
-                </div>
-              </AnimatedSection>
-            )) : (
-              <p className="text-center text-gray-600 col-span-3">Event rooms not available at the moment.</p>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Equipment */}
-      <AnimatedSection className="container-luxe py-20 md:py-24">
-        <SectionHeading title={t('events.equipmentTitle')} />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-14 max-w-4xl mx-auto">
-          {equipmentKeys.map((key) => (
-            <div key={key} className="flex items-center gap-3 bg-white border border-gray-100 rounded-md p-4 shadow-sm">
-              <CheckCircle2 size={18} className="text-brand-gold shrink-0" />
-              <span className="text-sm text-charcoal">{t(`events.${key}`)}</span>
-            </div>
-          ))}
-        </div>
       </AnimatedSection>
 
       {/* Quote request form */}
@@ -188,7 +106,7 @@ export default function Events() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <input
                   type="tel"
-                  placeholder="Téléphone"
+                  placeholder={t('contact.phoneLabel')}
                   value={form.phone}
                   onChange={(e) => update('phone', e.target.value)}
                   className={inputClass}
@@ -197,7 +115,7 @@ export default function Events() {
                   required
                   type="number"
                   min={1}
-                  placeholder="Nombre de personnes"
+                  placeholder={t('events.guestCountPlaceholder')}
                   value={form.guestCount}
                   onChange={(e) => update('guestCount', e.target.value)}
                   className={inputClass}

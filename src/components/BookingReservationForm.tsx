@@ -89,7 +89,7 @@ export default function BookingReservationForm() {
             placeholder={t('contact.namePlaceholder')}
             className={inputClass}
           />
-          {errors.name && <p className="text-red-500 text-xs mt-1">Ce champ est requis</p>}
+          {errors.name && <p className="text-red-500 text-xs mt-1">{t('common.requiredField')}</p>}
         </div>
         <div>
           <label htmlFor="booking-email" className="block text-xs uppercase tracking-widest2 text-gray-500 mb-2">
@@ -103,7 +103,7 @@ export default function BookingReservationForm() {
             placeholder={t('contact.emailPlaceholder')}
             className={inputClass}
           />
-          {errors.email && <p className="text-red-500 text-xs mt-1">Adresse e-mail invalide</p>}
+          {errors.email && <p className="text-red-500 text-xs mt-1">{t('common.invalidEmail')}</p>}
         </div>
       </div>
 
@@ -119,12 +119,15 @@ export default function BookingReservationForm() {
           placeholder={t('contact.phonePlaceholder')}
           className={inputClass}
         />
-        {errors.phone && <p className="text-red-500 text-xs mt-1">Numéro invalide</p>}
+        {errors.phone && <p className="text-red-500 text-xs mt-1">{t('common.invalidPhone')}</p>}
       </div>
 
-      <button type="submit" disabled={status === 'sending'} className="btn-gold w-full sm:w-auto disabled:opacity-60">
-        {status === 'sending' ? t('common.sending') : t('booking.confirmButton')}
-      </button>
+      <div className="space-y-3">
+        <button type="submit" disabled={status === 'sending'} className="btn-gold w-full sm:w-auto disabled:opacity-60">
+          {status === 'sending' ? t('common.sending') : t('booking.confirmButton')}
+        </button>
+        <p className="text-xs text-gray-500">{t('booking.confirmationNotice')}</p>
+      </div>
 
       {status === 'success' && (
         <div className="flex items-center gap-2 text-green-700 bg-green-50 border border-green-200 px-4 py-3 rounded text-sm">

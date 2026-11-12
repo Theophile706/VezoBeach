@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
-import { AnimatePresence, animate, motion, useInView } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Check, ImagePlus, X } from 'lucide-react'
 import type { RoomCategory } from '@/data/roomCategories'
 
@@ -12,9 +12,6 @@ interface RoomCardProps {
 export default function RoomCard({ category }: RoomCardProps) {
   const { t, i18n } = useTranslation()
   const [isEnlarged, setIsEnlarged] = useState(false)
-  const [displayedPrice, setDisplayedPrice] = useState(0)
-  const priceRef = useRef<HTMLParagraphElement>(null)
-  const isPriceInView = useInView(priceRef)
   const name = t(`rooms.categories.${category.id}.name`)
   const description = t(`rooms.categories.${category.id}.description`)
   const equipments = t('rooms.equipments', { returnObjects: true }) as string[]
@@ -27,19 +24,6 @@ export default function RoomCard({ category }: RoomCardProps) {
     window.addEventListener('keydown', handler)
     return () => window.removeEventListener('keydown', handler)
   }, [isEnlarged])
-
-  useEffect(() => {
-    if (!isPriceInView) {
-      setDisplayedPrice(0)
-      return
-    }
-    const controls = animate(0, category.price, {
-      duration: 1.8,
-      ease: 'easeOut',
-      onUpdate: (value) => setDisplayedPrice(Math.round(value)),
-    })
-    return () => controls.stop()
-  }, [isPriceInView, category.price])
 
   return (
     <article className="group bg-white shadow-card rounded-md overflow-hidden flex flex-col h-full transition-transform duration-500 hover:-translate-y-1">
@@ -70,9 +54,10 @@ export default function RoomCard({ category }: RoomCardProps) {
         <h3 className="font-serif text-xl text-charcoal mb-2">{name}</h3>
         <p className="text-sm text-gray-600 leading-relaxed mb-5">{description}</p>
 
-        <p ref={priceRef} className="font-serif text-2xl text-charcoal mb-6 tabular-nums">
-          {displayedPrice.toLocaleString(i18n.language)} Ar
+        <p className="font-serif text-2xl text-charcoal tabular-nums">
+          {category.price.toLocaleString(i18n.language)} Ar
         </p>
+        <p className="text-xs text-gray-500 mb-6">{t('rooms.perRoomNight')}</p>
 
         <ul className="mt-auto flex flex-wrap gap-x-4 gap-y-2 text-xs text-gray-500 border-t border-gray-100 pt-4">
           {equipments.map((item) => (

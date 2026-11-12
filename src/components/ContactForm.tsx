@@ -68,7 +68,7 @@ export default function ContactForm() {
             placeholder={t('contact.namePlaceholder')}
             className={inputClass}
           />
-          {errors.name && <p className="text-red-500 text-xs mt-1">Ce champ est requis</p>}
+          {errors.name && <p className="text-red-500 text-xs mt-1">{t('common.requiredField')}</p>}
         </div>
         <div>
           <label className="block text-xs uppercase tracking-widest2 text-gray-500 mb-2">
@@ -81,7 +81,7 @@ export default function ContactForm() {
             placeholder={t('contact.emailPlaceholder')}
             className={inputClass}
           />
-          {errors.email && <p className="text-red-500 text-xs mt-1">Adresse e-mail invalide</p>}
+          {errors.email && <p className="text-red-500 text-xs mt-1">{t('common.invalidEmail')}</p>}
         </div>
       </div>
 
@@ -97,7 +97,7 @@ export default function ContactForm() {
             placeholder={t('contact.phonePlaceholder')}
             className={inputClass}
           />
-          {errors.phone && <p className="text-red-500 text-xs mt-1">Numéro invalide</p>}
+          {errors.phone && <p className="text-red-500 text-xs mt-1">{t('common.invalidPhone')}</p>}
         </div>
         <div>
           <label className="block text-xs uppercase tracking-widest2 text-gray-500 mb-2">
@@ -124,7 +124,7 @@ export default function ContactForm() {
           placeholder={t('contact.messagePlaceholder')}
           className={inputClass}
         />
-        {errors.message && <p className="text-red-500 text-xs mt-1">Ce champ est requis</p>}
+        {errors.message && <p className="text-red-500 text-xs mt-1">{t('common.requiredField')}</p>}
       </div>
 
       <button type="submit" disabled={status === 'sending'} className="btn-gold w-full sm:w-auto disabled:opacity-60">
