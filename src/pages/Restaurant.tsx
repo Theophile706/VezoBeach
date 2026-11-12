@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
 import { Clock, ChefHat } from 'lucide-react'
 import PageHero from '@/components/PageHero'
 import AnimatedSection from '@/components/AnimatedSection'
@@ -6,9 +8,21 @@ import SectionHeading from '@/components/SectionHeading'
 import ImageGallery from '@/components/ImageGallery'
 import { useGalleryImages } from '@/hooks/useGallery'
 
+const FORMULA_ROTATION_MS = 2500
+
 export default function Restaurant() {
   const { t } = useTranslation()
   const restaurantImages = useGalleryImages('restaurant')
+  const formulas = t('restaurant.formulas', { returnObjects: true }) as { title: string; items: string[] }[]
+  const [activeFormula, setActiveFormula] = useState(0)
+
+  useEffect(() => {
+    const id = window.setInterval(
+      () => setActiveFormula((i) => (i + 1) % formulas.length),
+      FORMULA_ROTATION_MS,
+    )
+    return () => window.clearInterval(id)
+  }, [formulas.length])
 
   const specialties = ['specialty1', 'specialty2', 'specialty3', 'specialty4']
 
@@ -75,21 +89,6 @@ export default function Restaurant() {
               </div>
             ))}
           </div>
-
-          <h4 className="font-serif text-xl mt-10 mb-1">{t('restaurant.formulasTitle')}</h4>
-          <p className="text-xs text-gray-500 mb-5">{t('restaurant.formulasNote')}</p>
-          <div className="space-y-5">
-            {(t('restaurant.formulas', { returnObjects: true }) as { title: string; items: string[] }[]).map((formula) => (
-              <div key={formula.title}>
-                <div className="font-medium text-charcoal mb-2">{formula.title}</div>
-                <ul className="space-y-1.5 text-sm text-gray-600">
-                  {formula.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
         </div>
         <div>
           <h3 className="font-serif text-2xl mb-6 flex items-center gap-3">
@@ -103,6 +102,30 @@ export default function Restaurant() {
               </li>
             ))}
           </ul>
+        </div>
+      </AnimatedSection>
+
+      <AnimatedSection className="container-luxe pb-20 md:pb-24">
+        <h4 className="font-serif text-2xl mb-1">{t('restaurant.formulasTitle')}</h4>
+        <p className="text-xs text-gray-500 mb-8">{t('restaurant.formulasNote')}</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
+          {formulas.map((formula, idx) => (
+            <motion.div
+              key={formula.title}
+              animate={{ scale: activeFormula === idx ? 1.08 : 1 }}
+              transition={{ duration: 1.2, ease: [0.45, 0, 0.55, 1] }}
+              className={`rounded-md p-6 transition-shadow duration-1000 ${
+                activeFormula === idx ? 'bg-white shadow-soft-lg ring-1 ring-gold-500/40' : 'bg-cream'
+              }`}
+            >
+              <div className="font-medium text-charcoal mb-3">{formula.title}</div>
+              <ul className="space-y-1.5 text-sm text-gray-600">
+                {formula.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </div>
       </AnimatedSection>
 
@@ -127,7 +150,7 @@ export default function Restaurant() {
       <AnimatedSection className="container-luxe py-20 md:py-24">
         <SectionHeading title={t('restaurant.ctaTitle')} />
         <div className="mt-14">
-          <ImageGallery images={restaurantImages.slice(0, 4)} columns={4} fit="cover" />
+          <ImageGallery images={restaurantImages.slice(0, 4)} columns={4} fit="cover" entrance />
         </div>
       </AnimatedSection>
     </>

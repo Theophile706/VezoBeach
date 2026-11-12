@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { BedDouble, UtensilsCrossed, Waves, PartyPopper, Sparkles, Leaf, HeartHandshake } from 'lucide-react'
 import Hero from '@/components/Hero'
 import AnimatedSection from '@/components/AnimatedSection'
@@ -98,7 +99,7 @@ export default function Home() {
       <AnimatedSection className="container-luxe py-20 md:py-28">
         <SectionHeading eyebrow={t('home.galleryEyebrow')} title={t('home.galleryTitle')} />
         <div className="mt-14">
-          <ImageGallery images={homeGallery} columns={4} fit="cover" />
+          <ImageGallery images={homeGallery} columns={4} fit="cover" entrance />
         </div>
       </AnimatedSection>
 
@@ -129,7 +130,21 @@ export default function Home() {
 
       {/* Final CTA */}
       <section className="relative py-24 overflow-hidden">
-        <img src="/images/Photo-Gallerie-2-1200.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.img
+            src="/images/Photo-Gallerie-2-1200.jpg"
+            alt=""
+            className="w-full h-full object-cover"
+            initial={{ opacity: 0, scale: 1.12 }}
+            whileInView={{ opacity: 1 }}
+            animate={{ scale: [1.12, 1.04] }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{
+              opacity: { duration: 2.4, ease: [0.22, 1, 0.36, 1] },
+              scale: { duration: 10, repeat: Infinity, repeatType: 'reverse', ease: [0.25, 0.1, 0.25, 1] },
+            }}
+          />
+        </div>
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 container-luxe text-center">
           <h2 className="font-serif text-3xl md:text-4xl text-white mb-4">{t('home.ctaTitle')}</h2>

@@ -9,7 +9,16 @@ interface ImageGalleryProps {
   images: GalleryImage[]
   columns?: 2 | 3 | 4
   fit?: 'contain' | 'cover'
+  entrance?: boolean
+  drop?: boolean
 }
+
+const ENTRANCE_OFFSETS = [
+  { x: -120, y: 30, delay: 0 },
+  { x: 140, y: -20, delay: 0.12 },
+  { x: -90, y: -40, delay: 0.2 },
+  { x: 110, y: 50, delay: 0.06 },
+]
 
 /**
  * ImageGallery
@@ -17,7 +26,13 @@ interface ImageGalleryProps {
  * Responsive image grid with a fullscreen lightbox (prev/next/close,
  * keyboard navigation). Lazy-loads images via native `loading="lazy"`.
  */
-export default function ImageGallery({ images, columns = 3, fit = 'contain' }: ImageGalleryProps) {
+export default function ImageGallery({
+  images,
+  columns = 3,
+  fit = 'contain',
+  entrance = false,
+  drop = false,
+}: ImageGalleryProps) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const { i18n } = useTranslation()
   const english = i18n.resolvedLanguage?.startsWith('en')
@@ -47,22 +62,41 @@ export default function ImageGallery({ images, columns = 3, fit = 'contain' }: I
   return (
     <>
       <div className={`grid ${gridCols} gap-3 md:gap-4`}>
-        {images.map((img, idx) => (
-          <button
-            key={img.id}
-            type="button"
-            onClick={() => setActiveIndex(idx)}
-            className="group relative aspect-[4/3] overflow-hidden rounded-md bg-gray-100"
-          >
-            <img
-              src={resolveImageUrl(img.src)}
-              alt={altOf(img)}
-              loading="lazy"
-              className={`w-full h-full ${fit === 'cover' ? 'object-cover' : 'object-contain'}`}
-            />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
-          </button>
-        ))}
+        {images.map((img, idx) => {
+          const offset = ENTRANCE_OFFSETS[idx % ENTRANCE_OFFSETS.length]
+          const entranceProps = entrance
+            ? {
+                initial: { opacity: 0, x: offset.x, y: offset.y },
+                whileInView: { opacity: 1, x: 0, y: 0 },
+                viewport: { once: false, amount: 0.2 },
+                transition: { duration: 1.4, delay: offset.delay, ease: [0.22, 1, 0.36, 1] as const },
+              }
+            : drop
+              ? {
+                  initial: { opacity: 0, y: -360 },
+                  whileInView: { opacity: 1, y: 0 },
+                  viewport: { once: false, amount: 0.2 },
+                  transition: { duration: 1.4, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] as const },
+                }
+              : {}
+          return (
+            <motion.button
+              key={img.id}
+              type="button"
+              onClick={() => setActiveIndex(idx)}
+              className="group relative aspect-[4/3] overflow-hidden rounded-md bg-gray-100"
+              {...entranceProps}
+            >
+              <img
+                src={resolveImageUrl(img.src)}
+                alt={altOf(img)}
+                loading="lazy"
+                className={`w-full h-full ${fit === 'cover' ? 'object-cover' : 'object-contain'}`}
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
+            </motion.button>
+          )
+        })}
       </div>
 
       <AnimatePresence>
