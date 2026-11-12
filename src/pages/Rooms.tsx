@@ -53,6 +53,20 @@ export default function Rooms() {
         </ul>
       </AnimatedSection>
 
+      <section className="container-luxe pb-20 md:pb-24">
+        <div className="mx-auto max-w-3xl rounded-lg bg-white px-6 py-10 text-center shadow-md">
+          <h3 className="font-sans text-lg font-semibold text-gray-900">{t('rooms.technicalSheetTitle')}</h3>
+          <a
+            href="/Fiche-technique.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-block bg-[#f0c419] px-6 py-3 text-xs font-medium uppercase tracking-widest text-black shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-[#d9b015] hover:shadow-lg active:translate-y-0 active:shadow-sm"
+          >
+            {t('rooms.technicalSheetButton')}
+          </a>
+        </div>
+      </section>
+
       {/* Gallery */}
       <section className="bg-cream py-20 md:py-24">
         <div className="container-luxe">

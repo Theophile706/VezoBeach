@@ -118,6 +118,8 @@ const fr = {
       'Lit supplémentaire : 30 000 Ar',
       'Blanchisserie : grille tarifaire disponible dans la chambre',
     ],
+    technicalSheetTitle: "Fiche technique de l'hôtel",
+    technicalSheetButton: 'Voir la fiche technique',
     perRoomNight: 'par chambre et par nuit',
     categories: {
       standardGroundFloor: {

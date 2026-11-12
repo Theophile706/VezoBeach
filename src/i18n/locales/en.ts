@@ -118,6 +118,8 @@ const en = {
       'Extra bed: 30,000 Ar',
       'Laundry: rate list available in your room',
     ],
+    technicalSheetTitle: 'Hotel Technical Sheet',
+    technicalSheetButton: 'View the technical sheet',
     perRoomNight: 'per room per night',
     categories: {
       standardGroundFloor: {
