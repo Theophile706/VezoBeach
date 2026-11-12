@@ -41,7 +41,7 @@ export default function Rooms() {
         <SectionHeading title={t('rooms.compareTitle')} text={t('rooms.compareText')} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-14">
           {roomCategories.map((category, idx) => (
-            <AnimatedSection key={category.id} delay={idx * 0.06}>
+            <AnimatedSection key={category.id} delay={idx * 0.06} className="h-full min-w-0">
               <RoomCard category={category} />
             </AnimatedSection>
           ))}

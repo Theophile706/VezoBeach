@@ -27,7 +27,7 @@ export default function RoomCard({ category }: RoomCardProps) {
 
   return (
     <article className="group bg-white shadow-card rounded-md overflow-hidden flex flex-col h-full transition-transform duration-500 hover:-translate-y-1">
-      <div className="relative aspect-[4/3] overflow-hidden bg-cream">
+      <div className="relative aspect-[16/10] sm:aspect-[4/3] overflow-hidden bg-cream">
         {category.image ? (
           <button
             type="button"
@@ -43,16 +43,16 @@ export default function RoomCard({ category }: RoomCardProps) {
             />
           </button>
         ) : (
-          <div className="w-full h-full flex flex-col items-center justify-center gap-2 border border-dashed border-gray-300 text-gray-400">
-            <ImagePlus size={28} />
+          <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-cream text-gray-400">
+            <ImagePlus size={24} />
             <span className="text-[10px] uppercase tracking-widest2">{t('rooms.photoSoon')}</span>
           </div>
         )}
       </div>
 
-      <div className="p-6 flex flex-col flex-1">
-        <h3 className="font-serif text-xl text-charcoal mb-2">{name}</h3>
-        <p className="text-sm text-gray-600 leading-relaxed mb-5">{description}</p>
+      <div className="p-5 sm:p-6 flex flex-col flex-1 min-w-0">
+        <h3 className="font-serif text-xl text-charcoal mb-2 break-words">{name}</h3>
+        <p className="text-sm text-gray-600 leading-relaxed mb-5 break-words">{description}</p>
 
         <p className="font-serif text-2xl text-charcoal tabular-nums">
           {category.price.toLocaleString(i18n.language)} Ar
