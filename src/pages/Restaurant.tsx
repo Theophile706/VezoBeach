@@ -129,22 +129,22 @@ export default function Restaurant() {
         </div>
       </AnimatedSection>
 
-      {/*
       <section className="bg-cream py-20 md:py-24">
         <div className="container-luxe">
-          <SectionHeading title={t('restaurant.menuTitle')} text={t('restaurant.menuText')} />
-          <div className="mt-14 max-w-5xl mx-auto overflow-hidden rounded-md shadow-card bg-white">
+          <SectionHeading title="Notre carte" />
+        </div>
+        <div className="mt-14 overflow-hidden">
+          <div className="overflow-hidden rounded-md shadow-card bg-white">
             <img
-              src="/images/restaurant/menu-snack-hd.png"
-              alt={t('restaurant.menuTitle')}
-              className="w-full h-auto"
+              src="/images/Menu%20%C3%A9l%C3%A9gant.png"
+              alt="Notre carte"
+              className="block w-[130%] max-w-none -ml-[15%] h-auto"
               loading="lazy"
               decoding="async"
             />
           </div>
         </div>
       </section>
-      */}
 
       {/* Gallery + CTA */}
       <AnimatedSection className="container-luxe py-20 md:py-24">
