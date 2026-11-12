@@ -42,10 +42,12 @@ const fr = {
     tagline: 'Une adresse de charme à Morondava',
   },
   home: {
-    introEyebrow: 'Bienvenue au Vezo Beach',
-    introTitle: "Un havre de sérénité et de raffinement au cœur du Menabe",
+    introEyebrow: 'HÔTEL ⭐ ⭐ ⭐ À MORONDAVA',
+    introTitle: 'Hôtel Le Vezo Beach Morondava ⭐⭐⭐',
     introText:
-      "Situé à Morondava, sur la côte ouest de Madagascar, Le Vezo Beach vous invite à découvrir son cadre exceptionnel et élégant et vous offre le meilleur service pour rendre votre séjour inoubliable. Son restaurant et sa piscine font du Vezo Beach une destination de choix pour votre séjour à Morondava.",
+      'Vezo Beach Morondava est un hôtel 3 étoiles idéalement situé au bord de la mer. Profitez de vacances relaxantes dans un cadre magnifique avec des vues imprenables sur l’océan. Notre hôtel offre un hébergement confortable et des services de qualité pour rendre votre séjour inoubliable. Détendez-vous sur la plage de sable fin,',
+    introTextContinued:
+      'plongez dans les eaux turquoise ou explorez les environs pittoresques. Que vous soyez à la recherche d’une escapade romantique, d’aventures en plein air ou simplement de détente, Vezo Beach Morondava est l’endroit parfait pour vous. Réservez dès maintenant et découvrez la beauté de la côte malgache dans notre hôtel de charme.',
     servicesEyebrow: 'Nos services',
     servicesTitle: 'Un hôtel de charme au bord de l’océan',
     service1Title: 'Chambres & Suites',
@@ -173,7 +175,7 @@ const fr = {
     sectionEyebrow: 'La restauration',
     sectionTitle: 'Saveurs authentiques et moments conviviaux à Morondava',
     sectionText:
-      'Une cuisine malgache et internationale, servie dans une ambiance conviviale. Entre recettes locales et inspirations internationales, notre restaurant vous accueille pour partager un repas simple et soigné.',
+      'Côté cuisine, nous vous proposons un large choix, passant de la cuisine locale à la cuisine du monde, sans oublier les pêches du jour dont on ne saurait se passer à la plage ! Notre restaurant est ouvert à partir de 6h30 du matin. Situé au dernier étage, notre restaurant laisse une vue imprenable sur le coucher du soleil, mis à part le plaisir gustatif qu’on vous servira avec soin.',
     warmTableTitle: 'Une table accueillante pour voyageurs et visiteurs',
     warmTableText:
       'Un cadre agréable et chaleureux, idéal pour partager un moment convivial. Découvrez un lieu où cuisine locale et convivialité se rencontrent.',

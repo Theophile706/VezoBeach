@@ -46,9 +46,16 @@ export default function Home() {
       <AnimatedSection className="container-luxe py-20 md:py-28">
         <SectionHeading
           eyebrow={t('home.introEyebrow')}
+          eyebrowClassName="!text-black"
           title={t('home.introTitle')}
-          text={t('home.introText')}
+          titleClassName="!text-black"
         />
+        <div className="mt-10 columns-1 gap-12 text-gray-600 leading-relaxed md:columns-2">
+          <p className="first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-7xl first-letter:leading-[0.8] first-letter:text-black">
+            {t('home.introText')}
+          </p>
+          <p className="mt-4">{t('home.introTextContinued')}</p>
+        </div>
       </AnimatedSection>
 
       {/* Services showcase */}

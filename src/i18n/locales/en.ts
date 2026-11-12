@@ -42,10 +42,12 @@ const en = {
     tagline: 'A charming address in Morondava',
   },
   home: {
-    introEyebrow: 'Welcome to Le Vezo Beach',
-    introTitle: 'A haven of serenity and refinement in the heart of Menabe',
+    introEyebrow: 'HOTEL ⭐ ⭐ ⭐ IN MORONDAVA',
+    introTitle: 'Hotel Le Vezo Beach Morondava ⭐⭐⭐',
     introText:
-      "Located in Morondava on Madagascar's west coast, Le Vezo Beach invites you to discover its exceptional and elegant setting, offering attentive service to make your stay unforgettable. Its restaurant and swimming pool make Le Vezo Beach a wonderful base for your stay in Morondava.",
+      'Vezo Beach Morondava is a 3-star hotel ideally located by the sea. Enjoy a relaxing stay in a beautiful setting with breathtaking ocean views. Our hotel offers comfortable accommodation and quality services to make your stay unforgettable. Relax on the fine sand beach,',
+    introTextContinued:
+      'dive into the turquoise waters or explore the picturesque surroundings. Whether you are looking for a romantic getaway, outdoor adventures or simply relaxation, Vezo Beach Morondava is the perfect place for you. Book now and discover the beauty of the Malagasy coast at our charming hotel.',
     servicesEyebrow: 'Our Services',
     servicesTitle: 'A charming beachfront hotel',
     service1Title: 'Rooms & Suites',
@@ -173,7 +175,7 @@ const en = {
     sectionEyebrow: 'Dining',
     sectionTitle: 'Authentic flavours and convivial moments in Morondava',
     sectionText:
-      'A Malagasy and international cuisine, served in a friendly atmosphere. Between local recipes and international inspirations, our restaurant welcomes you to share a simple, carefully prepared meal.',
+      'On the menu, we offer a wide choice, ranging from local dishes to cuisine from around the world, and of course the fresh fish of the day that you simply must try at the beach! Our restaurant opens from 6:30 a.m. Located on the top floor, it offers a breathtaking view of the sunset, and beyond the pleasure of the food, we serve you with care.',
     warmTableTitle: 'A welcoming table for travellers and visitors',
     warmTableText:
       'A pleasant and warm setting, ideal for sharing a convivial moment. Discover a place where local cuisine and conviviality meet.',
