@@ -33,13 +33,14 @@ export default function RoomCard({ category }: RoomCardProps) {
             type="button"
             onClick={() => setIsEnlarged(true)}
             aria-label={name}
-            className="w-full h-full cursor-zoom-in"
+            className="absolute inset-0 block w-full h-full cursor-zoom-in"
           >
             <img
               src={category.image}
               alt={name}
               loading="lazy"
-              className="w-full h-full object-cover"
+              decoding="async"
+              className="absolute inset-0 block w-full h-full object-cover"
             />
           </button>
         ) : (
