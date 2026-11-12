@@ -4,10 +4,33 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+}
+
+#root {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+img,
+svg,
+video,
+iframe {
+  max-width: 100%;
+}
+
+input,
+select,
+textarea {
+  min-width: 0;
+  max-width: 100%;
 }
 
 ::selection {

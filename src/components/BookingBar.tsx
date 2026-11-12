@@ -57,7 +57,7 @@ export default function BookingBar({ floating = true }: BookingBarProps) {
   }
 
   const dateInputClass =
-    'relative text-sm font-medium text-charcoal w-full focus:outline-none bg-transparent ' +
+    'relative text-sm font-medium text-charcoal w-full min-w-0 max-w-full focus:outline-none bg-transparent ' +
     '[&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:inset-0 ' +
     '[&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full ' +
     '[&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:cursor-pointer'
@@ -133,7 +133,7 @@ export default function BookingBar({ floating = true }: BookingBarProps) {
             </button>
 
             {guestsOpen && (
-              <div className="absolute top-full left-0 mt-3 bg-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] rounded-none p-5 w-72 z-[9999] animate-fade-in">
+              <div className="absolute top-full left-0 mt-3 bg-white shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] rounded-none p-5 w-72 max-w-[calc(100vw-2rem)] z-[9999] animate-fade-in">
                 <Stepper label={t('common.rooms')} value={state.rooms} onChange={setRooms} min={1} />
                 <Stepper label={t('common.adults')} value={state.adults} onChange={setAdults} min={1} />
                 <Stepper label={t('common.children')} value={state.children} onChange={setChildren} min={0} />
