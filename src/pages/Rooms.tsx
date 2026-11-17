@@ -60,9 +60,9 @@ export default function Rooms() {
             href="/Fiche-technique.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative mt-6 inline-block bg-[#f0c419] px-6 py-3 text-xs font-medium uppercase tracking-widest text-black shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-[#d9b015] hover:shadow-lg active:translate-y-0 active:shadow-sm"
+            className="group relative mt-6 inline-block bg-[#FFCB3D] px-6 py-3 text-xs font-medium uppercase tracking-widest text-black shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:bg-[#FFCB3D] hover:shadow-lg active:translate-y-0 active:shadow-sm"
           >
-            <span className="pointer-events-none absolute inset-0 animate-ping bg-[#f0c419] opacity-40" aria-hidden="true" />
+            <span className="pointer-events-none absolute inset-0 animate-ping bg-[#FFCB3D] opacity-40" aria-hidden="true" />
             <span className="relative">{t('rooms.technicalSheetButton')}</span>
           </a>
         </div>

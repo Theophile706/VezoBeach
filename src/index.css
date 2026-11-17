@@ -34,7 +34,7 @@ textarea {
 }
 
 ::selection {
-  background-color: #BC8A0F;
+  background-color: #FFCB3D;
   color: white;
 }
 
@@ -46,11 +46,11 @@ textarea {
   background: #F7F6FA;
 }
 ::-webkit-scrollbar-thumb {
-  background: #BC8A0F;
+  background: #FFCB3D;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #967008;
+  background: #FFCB3D;
 }
 
 @layer components {
@@ -96,5 +96,5 @@ textarea {
 /* React-datepicker overrides for luxury theme */
 .rdp-luxe .react-datepicker {
   font-family: 'Inter', sans-serif;
-  border-color: #EEDDAF;
+  border-color: #FFCB3D;
 }

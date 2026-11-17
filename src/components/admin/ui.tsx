@@ -148,7 +148,7 @@ type StatusTone = 'good' | 'warning' | 'critical' | 'neutral'
 
 const TONES: Record<StatusTone, { dot: string; text: string; bg: string }> = {
   good: { dot: '#0ca30c', text: '#0a6b0a', bg: '#e7f6e7' },      // texte 6,00:1
-  warning: { dot: '#fab219', text: '#8a5a00', bg: '#fdf3dd' },   // texte 5,37:1
+  warning: { dot: '#FFCB3D', text: '#6b4a00', bg: '#FFCB3D' },   // texte 5,3:1 sur fond jaune
   critical: { dot: '#d03b3b', text: '#a32020', bg: '#fbe9e9' },  // texte 6,44:1
   neutral: { dot: '#898781', text: '#52514e', bg: '#f3f4f6' },   // texte 7,21:1
 }

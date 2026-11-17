@@ -5,20 +5,20 @@ export default {
     extend: {
       colors: {
         brand: {
-          gold: '#BC8A0F',
+          gold: '#FFCB3D',
           indigo: '#292059',
         },
         gold: {
-          50: '#FCFAF3',
-          100: '#F7F0DA',
-          200: '#EEDDAF',
-          300: '#DCC37D',
-          400: '#BC8A0F',
-          500: '#967008',
-          600: '#876406',
-          700: '#705306',
-          800: '#594206',
-          900: '#3D2D04',
+          50: '#FFCB3D',
+          100: '#FFCB3D',
+          200: '#FFCB3D',
+          300: '#FFCB3D',
+          400: '#FFCB3D',
+          500: '#FFCB3D',
+          600: '#FFCB3D',
+          700: '#FFCB3D',
+          800: '#FFCB3D',
+          900: '#FFCB3D',
         },
         cream: '#F7F6FA',
         charcoal: '#292059',
@@ -31,7 +31,7 @@ export default {
         widest2: '0.3em',
       },
       backgroundImage: {
-        'gold-gradient': 'linear-gradient(135deg, #967008 0%, #876406 100%)',
+        'gold-gradient': 'linear-gradient(135deg, #FFCB3D 0%, #FFCB3D 100%)',
       },
       boxShadow: {
         'soft-lg': '0 20px 60px -10px rgba(0,0,0,0.25)',

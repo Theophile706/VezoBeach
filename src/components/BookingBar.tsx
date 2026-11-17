@@ -182,7 +182,7 @@ function SearchOutcomeNotice({ outcome }: { outcome: SearchOutcome }) {
     searching: 'bg-white/95 text-gray-600',
     available: 'bg-green-50 text-green-800',
     full: 'bg-red-50 text-red-700',
-    failed: 'bg-amber-50 text-amber-800',
+    failed: 'bg-[#FFCB3D] text-amber-800',
   } as const
 
   const Icon = outcome.status === 'available' ? CheckCircle2
