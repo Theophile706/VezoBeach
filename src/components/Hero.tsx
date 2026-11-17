@@ -94,7 +94,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: 'easeOut' }}
         >
-          <h1 className="font-serif text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wide">
+          <h1 className="font-serif text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-wide">
             {t('hero.title')}
             <span className="sr-only"> {t('hero.subtitle')}</span>
           </h1>

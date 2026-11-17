@@ -43,7 +43,7 @@ export default function Header() {
         transparent ? 'bg-transparent py-6' : 'bg-white/95 backdrop-blur-sm shadow-sm py-3'
       )}
     >
-      <div className="container-luxe flex items-center justify-between gap-4">
+      <div className="container-luxe lg:!px-8 flex items-center justify-between gap-4">
         {/* Logo : version claire sur hero transparent, version foncée une fois scrollé */}
         <Link to="/" className="flex items-center shrink-0">
           <img
@@ -54,14 +54,14 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className={classNames('hidden lg:flex items-center gap-5 text-[11px] tracking-wider uppercase font-medium', textColor)}>
+        <nav className={classNames('hidden lg:flex flex-1 items-center justify-center gap-4 font-nav text-[14px] font-semibold uppercase leading-[1.4] tracking-[0.3px] whitespace-nowrap', textColor)}>
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
                 classNames(
-                  'relative pb-1 text-center leading-tight transition-colors duration-200',
+                  'relative pb-1 text-center transition-colors duration-200',
                   hoverColor,
                   isActive && 'after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[1px] after:bg-gold-500'
                 )
@@ -73,9 +73,9 @@ export default function Header() {
         </nav>
 
         {/* Right controls */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-4">
           <LanguageSelector light={transparent} />
-          <Link to="/contact#booking" className="btn-gold !py-3 !px-6">
+          <Link to="/contact#booking" className="btn-gold !py-3 !px-5">
             {t('common.bookNow')}
           </Link>
         </div>
@@ -99,12 +99,12 @@ export default function Header() {
               <NavLink
                 key={item.to}
                 to={item.to}
-                className="px-6 py-4 text-sm tracking-wide uppercase hover:bg-cream hover:text-gold-600 transition-colors duration-200"
+                className="px-6 py-4 font-nav text-[16px] font-semibold uppercase leading-[1.4] tracking-[0.3px] hover:bg-cream hover:text-gold-600 transition-colors duration-200"
               >
                 {t(`nav.${item.key}`)}
               </NavLink>
             ))}
-            <NavLink to="/contact" className="px-6 py-4 text-sm tracking-wide uppercase hover:bg-cream hover:text-gold-600 transition-colors duration-200">
+            <NavLink to="/contact" className="px-6 py-4 font-nav text-[16px] font-semibold uppercase leading-[1.4] tracking-[0.3px] hover:bg-cream hover:text-gold-600 transition-colors duration-200">
               {t('nav.contact')}
             </NavLink>
           </nav>

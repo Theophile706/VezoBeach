@@ -26,6 +26,7 @@ export default {
       fontFamily: {
         serif: ['"Playfair Display"', 'Georgia', 'serif'],
         sans: ['"Inter"', '-apple-system', 'sans-serif'],
+        nav: ['"Fira Sans Condensed"', 'sans-serif'],
       },
       letterSpacing: {
         widest2: '0.3em',
