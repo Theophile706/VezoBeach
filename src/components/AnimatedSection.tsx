@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
+import { isMobileViewport } from '@/utils/isMobileViewport'
 
 interface AnimatedSectionProps {
   children: ReactNode
@@ -29,12 +30,14 @@ export default function AnimatedSection({
   direction = 'up',
   id,
 }: AnimatedSectionProps) {
+  const isMobile = isMobileViewport()
+
   return (
     <motion.div
       id={id}
       className={className}
-      initial="hidden"
-      whileInView="visible"
+      initial={isMobile ? false : 'hidden'}
+      whileInView={isMobile ? undefined : 'visible'}
       viewport={{ once: true, amount: 0.2 }}
       variants={variants[direction]}
       transition={{ duration: 0.7, delay, ease: [0.25, 0.1, 0.25, 1] }}
