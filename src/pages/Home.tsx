@@ -92,7 +92,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mt-14">
           {highlights.map((h) => (
             <div key={h.key} className="text-center">
-              <div className="w-14 h-14 rounded-full bg-gold-50 flex items-center justify-center mx-auto mb-5">
+              <div className="w-14 h-14 flex items-center justify-center mx-auto mb-5">
                 <h.icon className="text-brand-gold" size={26} />
               </div>
               <h3 className="font-serif text-lg mb-2">{t(`home.${h.key}`)}</h3>
