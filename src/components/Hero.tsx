@@ -123,7 +123,7 @@ export default function Hero() {
       */}
       </div>
 
-      <div data-no-loupe className="relative z-30 px-4 py-6 md:absolute md:bottom-0 md:left-0 md:right-0 md:translate-y-[calc(50%-0.2cm)] md:px-0 md:py-0">
+      <div data-no-loupe className="relative z-30 -mt-10 px-4 pb-6 md:mt-0 md:absolute md:bottom-0 md:left-0 md:right-0 md:translate-y-[calc(50%-0.2cm)] md:px-0 md:py-0">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
