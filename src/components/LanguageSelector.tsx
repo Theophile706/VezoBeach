@@ -12,7 +12,7 @@ export default function LanguageSelector({ light = false }: LanguageSelectorProp
   const inactiveOpacity = light ? 'opacity-60' : 'opacity-50'
 
   return (
-    <div className={classNames('flex items-center gap-1 text-sm font-medium tracking-wide', baseColor)} aria-label="Language selector">
+    <div className={classNames('flex items-center gap-1 font-nav text-[12px] font-semibold uppercase leading-[1.4] tracking-[0.3px]', baseColor)} aria-label="Language selector">
       <button
         type="button"
         onClick={() => setLanguage('fr')}
