@@ -39,7 +39,7 @@ export default function ImageGallery({
   const english = i18n.resolvedLanguage?.startsWith('en')
   const altOf = (img: GalleryImage) => (english ? img.altEn || img.alt : img.alt)
 
-  const isMobile = isMobileViewport()
+  const offsetScale = isMobileViewport() ? 0.35 : 1
   const close = useCallback(() => setActiveIndex(null), [])
   const next = useCallback(() => setActiveIndex((i) => (i === null ? null : (i + 1) % images.length)), [images.length])
   const prev = useCallback(
@@ -66,18 +66,16 @@ export default function ImageGallery({
       <div className={`grid ${gridCols} gap-3 md:gap-4`}>
         {images.map((img, idx) => {
           const offset = ENTRANCE_OFFSETS[idx % ENTRANCE_OFFSETS.length]
-          const entranceProps = isMobile
-            ? {}
-            : entrance
+          const entranceProps = entrance
             ? {
-                initial: { opacity: 0, x: offset.x, y: offset.y },
+                initial: { opacity: 0, x: offset.x * offsetScale, y: offset.y * offsetScale },
                 whileInView: { opacity: 1, x: 0, y: 0 },
                 viewport: { once: false, amount: 0.2 },
                 transition: { duration: 1.4, delay: offset.delay, ease: [0.22, 1, 0.36, 1] as const },
               }
             : drop
               ? {
-                  initial: { opacity: 0, y: -360 },
+                  initial: { opacity: 0, y: -360 * offsetScale },
                   whileInView: { opacity: 1, y: 0 },
                   viewport: { once: false, amount: 0.2 },
                   transition: { duration: 1.4, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] as const },

@@ -11,7 +11,7 @@ export default function Spa() {
   const { t } = useTranslation()
   const poolImages = useGalleryImages('pool')
   const spaImages = useGalleryImages('spa')
-  const isMobile = isMobileViewport()
+  const offsetScale = isMobileViewport() ? 0.35 : 1
 
   return (
     <>
@@ -30,8 +30,8 @@ export default function Spa() {
             alt={t('spa.imgPool')}
             className="rounded-md aspect-square object-cover bg-cream"
             loading="lazy"
-            initial={isMobile ? false : { opacity: 0, x: -120, y: 30 }}
-            whileInView={isMobile ? undefined : { opacity: 1, x: 0, y: 0 }}
+            initial={{ opacity: 0, x: -120 * offsetScale, y: 30 * offsetScale }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 1.4, delay: 0, ease: [0.22, 1, 0.36, 1] }}
           />
@@ -40,8 +40,8 @@ export default function Spa() {
             alt={t('spa.imgPoolRelax')}
             className="rounded-md aspect-square object-cover bg-cream mt-8"
             loading="lazy"
-            initial={isMobile ? false : { opacity: 0, x: 140, y: -20 }}
-            whileInView={isMobile ? undefined : { opacity: 1, x: 0, y: 0 }}
+            initial={{ opacity: 0, x: 140 * offsetScale, y: -20 * offsetScale }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 1.4, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
           />
